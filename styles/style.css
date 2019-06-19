@@ -1,0 +1,79 @@
+body {
+  font-family: AvenirNextLTPro-Regular;
+  font-size: 35px;
+}
+
+.header {
+  font-size: 25px;
+  background-color: #1C2630;
+  color: #FFFFFF;
+  padding: 2px 1px 1px 8px;
+  margin: -8px -8px 0px -8px;
+}
+
+a {
+  font-size: 45px;
+  font-weight: lighter;
+  color: #222;
+  background-color: #FFFFFF;
+  border: 5px solid;
+  border-color: #222;
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  margin: 10px;
+  display:inline-block;
+  width: 500px;
+}
+
+a:hover {
+  color: #FFFFFF;
+  background-color: #222;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-weight: lighter;
+}
+
+.logo {
+  float: left;
+  padding: 15px 30px 15px 15px;
+}
+
+.name {
+  padding: 4px 0px 4px 4px;
+  text-transform: uppercase;
+}
+
+input[type=text] {
+  font-size: 55px;
+  border: 2px solid #222;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  font-size: 45px;
+  border-radius: 12px;
+  background-color: #222;
+  color: white;
+  padding: 45px 67.5px;
+  border: none;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.checkinout {
+  font-size: 55px;
+}
+
+.checkinout a {
+  text-align: center;
+  width: 153.953px;
+  height: 43px;
+  padding: 45px 62.5px;
+  margin: 5px 10px;
+}
