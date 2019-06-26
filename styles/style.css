@@ -1,5 +1,5 @@
 body {
-  font-family: AvenirNextLTPro-Regular;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 35px;
 }
 
@@ -20,7 +20,7 @@ a {
   border-color: #222;
   border-radius: 12px;
   text-decoration: none;
-  padding: 1em 1.5em;
+  padding: 45px 67.5px;
   margin: 10px;
   display:inline-block;
   width: 500px;
@@ -61,19 +61,21 @@ input[type=submit] {
   background-color: #222;
   color: white;
   padding: 45px 67.5px;
-  border: none;
+  border: 5px solid;
+  border-color: #222;
+  border-radius: 12px;
   text-decoration: none;
-  margin: 10px;
+  margin: 5px 10px 10px 10px;
 }
 
 .checkinout {
-  font-size: 55px;
+  font-size: 45px;
 }
 
 .checkinout a {
   text-align: center;
-  width: 153.953px;
-  height: 43px;
-  padding: 45px 62.5px;
-  margin: 5px 10px;
+  width: 157.526px;
+  height: 51.667px;
+  padding: 40px 67.5px 50px 67.5px;
+  margin: 15px 10px 10px 10px;
 }
