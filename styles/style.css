@@ -1,3 +1,16 @@
+/*
+if this gets used, need to figure out a way to prevent buttons 
+from being unaligned when going between Avenir and Segoe
+- use CSS grids?
+@font-face {
+  font-family: 'Avenir Next';
+  src: url(../fonts/ave_next_ssv/AvenirNextLTPro-Regular.otf) format('opentype');
+}*/
+
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 35px;
