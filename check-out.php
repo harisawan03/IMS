@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -33,7 +33,7 @@
       <p>Total Owned: X</p>
       <p>Total Available: Y</p>
       <br>
-      <form action="confirm-out.html"> <!-- action="/action_page.php" -->
+      <form method="post" action="confirm-out.php"> <!-- action="/action_page.php" -->
         Who's checking it out?<br><br>
         <input type="text" name="name"><br><br><br>
         <a href="index.html">Cancel</a>
