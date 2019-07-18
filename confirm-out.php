@@ -29,8 +29,7 @@
     <div class="success">
       <br>
       <h3>Success!</h3>
-      <p>Item_Name <br>has been successfully checked-out by </p><br>
-      <?= $_POST['name'];?>
+      <p>Item_Name <br>has been successfully checked-out by <br><?= $_POST['name'];?></p><br>
       <p>Total Owned: X</p><br>
       <p>Total Available: Y-1</p><br>
       <a href="index.html">Return to Home</a>
