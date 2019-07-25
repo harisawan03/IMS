@@ -29,9 +29,27 @@
     <div class="success">
       <br>
       <h3>Success!</h3>
-      <p>Item_Name <br>has been successfully checked-out by <br><?= $_POST['name'];?></p><br>
-      <p>Total Owned: X</p><br>
-      <p>Total Available: Y-1</p><br>
+      
+      <?php
+      $file = "db_connect.php";
+      include $file;
+
+      $sqlget = "SELECT owned, available, item FROM it_inventory WHERE id = 1"; // sample query --eventually use views
+      $sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
+      $inventory = sqlsrv_fetch_array($sqldata);
+
+      echo "<p>"; 
+      echo $inventory['item'];
+      echo "<br>has been successfully checked-out by <br> ";
+      echo $_POST['name']; 
+      echo "</p><br>";
+      echo "<p>Total Owned: ";
+      echo $inventory['owned'];
+      echo "</p><br>";
+      echo "<p>Total Available: ";
+      echo $inventory['available'];
+      echo "</p><br>";
+      ?>
       <a href="index.html">Return to Home</a>
     </div>
 

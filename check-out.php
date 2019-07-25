@@ -29,36 +29,18 @@
     <div class="update">
       <br>
       <br>
+
       <?php
-      echo "<p>this displays 1</p>"; //test
-      // $file = 'db_connect.php';
-      echo "<p>this displays 2</p>"; //test
-      // include '$file';
+      $file = 'db_connect.php';
+      include $file;
 
-      /******************************* will eventually be in separte file *******************************/
-      $serverName = "RVC-INVENTORY"; // proper server name?
-      echo "<p>this displays 3</p>"; // test
-      $connectionInfo = array( "Database"=>"rvc-inventory"); // proper connection info?
-      echo "<p>this displays 4</p>"; // test
-      $conn = sqlsrv_connect( $serverName, $connectionInfo);
-      echo "<p>this does not display 5</p>"; // test
-
-      if( $conn ) {
-        echo "Connection established.<br />";
-      }else{
-        echo "Connection could not be established.<br />";
-        die( print_r( sqlsrv_errors(), true));
-      }
-      /**************************************************************************************************/
-
-      echo "<p>this does not display 6</p>"; // test
-      $sqlget = "SELECT owned, available, item FROM it_inventory WHERE id = 1"; // sample query
-      echo "<p>this does not display 7</p>"; // test
-      $sqldata = sqlsrv_query($conn, $sqlget) or die('error getting data from database');
-      echo "<p>this does not display 8</p>"; // test
+      $sqlget = "SELECT owned, available, item FROM it_inventory WHERE id = 1"; // sample query --eventually use views
+      $sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
       $inventory = sqlsrv_fetch_array($sqldata);
       
-      echo "<p>Item #1</p>";
+      echo "<p>";
+      echo $inventory['item'];
+      echo "</p>";
       echo "<p>Total Owned:";
       echo $inventory['owned'];
       echo "</p>";
@@ -72,7 +54,15 @@
         Who's checking it out?<br><br>
         <input type="text" name="name"><br><br><br>
         <a href="index.html">Cancel</a>
-        <input type="submit" value="Confirm">
+        <script>
+          function update() {
+            <?php
+            $sqlupdate = "UPDATE it_inventory SET available = available - 1 WHERE id = 1";
+            $sqldata = sqlsrv_query($conn, $sqlupdate) or die( print_r( sqlsrv_errors(), true));
+            ?>
+          }
+        </script>
+        <input type="submit" onclick="update()" value="Confirm">
       </form>
     </div>
 

@@ -1,13 +1,11 @@
 <?php
 
-$serverName = "(local)";
+$serverName = "RVC-INVENTORY";
 
-$connectionInfo = array( "Database"=>"rvc-inventory");
+$connectionInfo = array( "Database"=>"RVC-INVENTORY");
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-if( $conn ) {
-     echo "Connection established.<br />";
-}else{
+if( !$conn ) {
      echo "Connection could not be established.<br />";
      die( print_r( sqlsrv_errors(), true));
 }
