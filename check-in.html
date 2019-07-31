@@ -6,7 +6,7 @@
   <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
-<body>
+<body onLoad="showInventory()">
 
   <div class="header">
 
@@ -28,16 +28,40 @@
 
     <div class="update">
       <br>
+      <div id="checkin"><h3>Check-in</h3></div>
       <br>
-      <p>Item #1234567890</p> <!-- placeholder text, will pull item number from database -->
-      <p>Total Owned: X</p>
-      <p>Total Available: Y</p>
+      
+      <script>
+        function showInventory() {
+          let xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("checkin").innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("GET", "/PHP/get-inventory.php", true);
+          xhttp.send();
+        }
+      </script>
+
       <br>
-      <form action="confirm-in.html"> <!-- action="/action_page.php" -->
+      <form method="post" action="confirm-in.php">
         Who's checking it in?<br><br>
         <input type="text" name="name"><br><br>
         <a href="index.html">Cancel</a>
-        <input type="submit" value="Confirm">
+        <script>
+          function checkin() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("checkin").innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("POST", "/PHP/update-in.php", true);
+            xhttp.send();
+          }
+        </script>
+        <input type="submit" onClick="checkin()" value="Confirm">
       </form>
     </div>
 

@@ -68,7 +68,7 @@ input[type=text] {
   border-radius: 4px;
 }
 
-input[type=submit] {
+button, input[type=submit] {
   font-size: 45px;
   border-radius: 12px;
   background-color: #222;

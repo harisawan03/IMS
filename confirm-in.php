@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>IMS Confirm Check-out</title>
+  <title>IMS Confirm Check-in</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -29,16 +29,16 @@
     <div class="success">
       <br>
       <h3>Success!</h3>
-      <p>Check-out has been completed by </p>
+      <p>Check-in has been completed by</p>
       <p><?php echo $_POST['name']?></p>
-      <div id="confirmout"><h3>Confirm Out</h3></div>
+      <div id="confirmin"><h3>Confirm In</h3></div>
 
       <script>
         function showInventory() {
           let xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("confirmout").innerHTML = this.responseText;
+              document.getElementById("confirmin").innerHTML = this.responseText;
             }
           };
           xhttp.open("GET", "/PHP/confirm-inventory.php", true);
