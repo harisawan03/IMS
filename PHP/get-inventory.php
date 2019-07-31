@@ -10,10 +10,10 @@ $inventory = sqlsrv_fetch_array($sqldata);
 echo "<p>";
 echo $inventory['item'];
 echo "</p>";
-echo "<p>Total Owned:";
+echo "<p>Total Owned: ";
 echo $inventory['owned'];
 echo "</p>";
-echo "<p>Total Available:";
+echo "<p>Total Available: ";
 echo $inventory['available'];
 echo "</p>";
 

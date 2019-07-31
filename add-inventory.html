@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>IMS Remove Inventory</title>
+  <title>IMS Add Inventory</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -29,26 +29,89 @@
     <div class="update">
       <br>
       <br>
-      <form action="confirm-add.html"> <!-- action="/action_page.php" -->
+      <form method="post" action="confirm-add.php">
         Does the item exist in inventory?<br> <!-- if yes, go to scan page and autopopulate, if no, reveal the rest of the form to be filled out -->
-        <input type="radio" name="exists" value="Yes">Yes
-        <input type="radio" name="exists" value="No">No<br><br>
+        <input type="radio" name="exists" value="Yes" id="yes" onClick="displayData()">Yes
+        <script>
+          function displayData() {
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("return").innerHTML = this.responseText;
+              }
+            };
+            xhttp.open("GET", "/PHP/get-item-data.php", true);
+            xhttp.send();
+
+            let buttons = document.getElementById('buttons');
+            let buttonSetting = buttons.style.display;
+            let itemInfo = document.getElementById('info');
+            let displaySetting = itemInfo.style.display;
+
+            if (buttonSetting == 'none') {
+              buttons.style.display = 'block';
+            }
+            if (displaySetting == 'block') {
+              itemInfo.style.display = 'none';
+            }
+          }
+          let state = 'yes';
+        </script>
+        <input type="radio" name="exists" value="No" id="no" onClick="displayForm()">No<br><br>
+        <script>
+          function displayForm() {
+            let itemInfo = document.getElementById('info');
+            let displaySetting = itemInfo.style.display;
+            let buttons = document.getElementById('buttons');
+            let cancel = document.getElementById('return');
+
+            if (displaySetting == 'none') {
+              itemInfo.style.display = 'block';
+              buttons.style.display = 'block';
+              cancel.style.display = 'none';
+            }
+            let state = 'no';
+          }
+        </script>
+        
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1"><br><br>
-        Item Name<br><input type="text" name="item"> <br><br>
-        Category<br>
-        <select class="category">
-          <option value=""></option>
-          <option value="cord">Cord</option>
-          <option value="computer">Computer</option>
-          <option value="adapter">Adapter</option>
-          <option value="peripheral">Peripheral</option>
-          <option value="other">Other</option>
-        </select><br><br>
-        <!-- Description<br><input type="text" name="description"><br><br> -->
-        <div class="grid">
-          <a href="index.html">Cancel</a>
-          <input type="submit" value="Add">
+        <div id="return"><a href="index.html">Cancel</a></div>
+        <div id="info" style="display:none;">
+          Item Name<br><input type="text" name="item"> <br><br>
+          Category<br>
+          <select class="category">
+            <option value=""></option>
+            <option value="cord">Cord</option>
+            <option value="computer">Computer</option>
+            <option value="adapter">Adapter</option>
+            <option value="peripheral">Peripheral</option>
+            <option value="other">Other</option>
+          </select><br><br>
+          <!-- Description<br><input type="text" name="description"><br><br> -->
         </div>
+        <div id="add"></div>
+        <div id="buttons" style="display:none;">
+          <a href="index.html">Cancel</a>
+          <script>
+            function add() {
+              let xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  document.getElementById("add").innerHTML = this.responseText;
+                }
+              };
+              if (state == 'yes') {
+                xhttp.open("POST", "/PHP/add-existing.php", true);
+              } else {
+                xhttp.open("POST", "/PHP/add-new.php", true);
+              }
+              xhttp.send();
+            }
+          </script>
+          <input type="submit" onClick="add()" value="Add">
+        </div>
+        
+        
       </form>
     </div>
 

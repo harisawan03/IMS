@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,7 +5,7 @@
   <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
-<body>
+<body onLoad="showUpdate()">
 
   <div class="header">
 
@@ -28,10 +27,20 @@
 
     <div class="success">
       <br>
-      <h3>Success!</h3>
-      <p>Item_Name <br>has been successfully added.</p><br>
-      <p>Total Owned: X+1</p><br>
-      <p>Total Available: Y+1</p><br>
+      <h2>Added successfully!</h2>
+      <div id="confirmadd"><h3>Confirm Add</h3></div>
+      <script>
+        function showUpdate() {
+          let xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("confirmadd").innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("GET", "/PHP/confirm-update.php", true);
+          xhttp.send();
+        }
+      </script>
       <a href="index.html">Return to Home</a>
     </div>
 

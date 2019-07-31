@@ -1,15 +1,14 @@
 <?php
 
-$file = "db-connect.php";
+$file = 'db-connect.php';
 include $file;
 
-$sqlget = "SELECT owned, available, item FROM it_inventory WHERE id = 1"; // sample query --eventually use views
+$sqlget = "SELECT item, owned, available FROM it_inventory WHERE id = 1";
 $sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
 
-echo "<br><p>";
-echo "Item: ";
-echo $inventory['item']; 
+echo "<br><p>Item: ";
+echo $inventory['item'];
 echo "</p><br>";
 echo "<p>Total Owned: ";
 echo $inventory['owned'];
