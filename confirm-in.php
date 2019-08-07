@@ -1,12 +1,12 @@
-
 <html>
 
 <head>
   <title>IMS Confirm Check-in</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
+  <script src="script/multi-use.js"></script>
 </head>
 
-<body onLoad="showInventory()">
+<body onLoad="showUpdate()">
 
   <div class="header">
 
@@ -31,21 +31,7 @@
       <h3>Success!</h3>
       <p>Check-in has been completed by</p>
       <p><?php echo $_POST['name']?></p>
-      <div id="confirmin"><h3>Confirm In</h3></div>
-
-      <script>
-        function showInventory() {
-          let xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("confirmin").innerHTML = this.responseText;
-            }
-          };
-          xhttp.open("GET", "/PHP/confirm-inventory.php", true);
-          xhttp.send();
-        }
-      </script>
-
+      <div id="confirm"><h3>Confirm In</h3></div>
       <a href="index.html">Return to Home</a>
     </div>
 

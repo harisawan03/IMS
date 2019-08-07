@@ -3,6 +3,7 @@
 <head>
   <title>IMS Confirm Remove</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
+  <script src="script/multi-use.js"></script>
 </head>
 
 <body onLoad="showUpdate()">
@@ -28,19 +29,7 @@
     <div class="success">
       <br>
       <h2>Removed successfully!</h2>
-      <div id="confirmremove"><h3>Confirm Remove</h3></div>
-      <script>
-        function showUpdate() {
-          let xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("confirmremove").innerHTML = this.responseText;
-            }
-          };
-          xhttp.open("GET", "/PHP/confirm-update.php", true);
-          xhttp.send();
-        }
-      </script>
+      <div id="confirm"><h3>Confirm Remove</h3></div>
       <a href="index.html">Return to Home</a>
     </div>
 

@@ -4,6 +4,7 @@
 <head>
   <title>IMS Add Inventory</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
+  <script src="script/single-use.js"></script>
 </head>
 
 <body>
@@ -32,66 +33,6 @@
       <form method="post" action="confirm-add.php">
         Does the item exist in inventory?<br> <!-- if yes, go to scan page and autopopulate, if no, reveal the rest of the form to be filled out -->
         <input type="radio" name="exists" value="Yes" id="yes" onClick="displayData()">Yes
-        <script>
-          let state;
-
-          function displayData() {
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("return").innerHTML = this.responseText;
-              }
-            };
-            xhttp.open("GET", "/PHP/get-item-data.php", true);
-            xhttp.send();
-
-            let buttons = document.getElementById('buttons');
-            let buttonSetting = buttons.style.display;
-            let itemInfo = document.getElementById('info');
-            let displaySetting = itemInfo.style.display;
-
-            if (buttonSetting == 'none') {
-              buttons.style.display = 'block';
-            }
-            if (displaySetting == 'block') {
-              itemInfo.style.display = 'none';
-            }
-            state = 'yes';
-            console.log(state);
-            return state;
-          }
-
-          function displayForm() {
-            let itemInfo = document.getElementById('info');
-            let displaySetting = itemInfo.style.display;
-            let buttons = document.getElementById('buttons');
-            let cancel = document.getElementById('return');
-
-            if (displaySetting == 'none') {
-              itemInfo.style.display = 'block';
-              buttons.style.display = 'block';
-              cancel.style.display = 'none';
-            }
-            state = 'no';
-            console.log(state);
-            return state;
-          }
-
-          function add() {
-              let xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                  document.getElementById("add").innerHTML = this.responseText;
-                }
-              };
-              if (state == 'yes') {
-                xhttp.open("POST", "/PHP/add-existing.php", true);
-              } else {
-                xhttp.open("POST", "/PHP/add-new.php", true);
-              }
-              xhttp.send();
-            }
-        </script>
         <input type="radio" name="exists" value="No" id="no" onClick="displayForm()">No<br><br>
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1"><br><br>
         <div id="return"><a href="index.html">Cancel</a></div>
