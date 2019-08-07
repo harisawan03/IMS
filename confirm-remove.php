@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-  <title>IMS Confirm Add</title>
+  <title>IMS Confirm Remove</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -28,14 +27,14 @@
 
     <div class="success">
       <br>
-      <h2>Added successfully!</h2>
-      <div id="confirmadd"><h3>Confirm Add</h3></div>
+      <h2>Removed successfully!</h2>
+      <div id="confirmremove"><h3>Confirm Remove</h3></div>
       <script>
         function showUpdate() {
           let xhttp = new XMLHttpRequest();
           xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              document.getElementById("confirmadd").innerHTML = this.responseText;
+              document.getElementById("confirmremove").innerHTML = this.responseText;
             }
           };
           xhttp.open("GET", "/PHP/confirm-update.php", true);
