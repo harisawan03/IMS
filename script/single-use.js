@@ -84,10 +84,7 @@ function add() {
       document.getElementById("add").innerHTML = this.responseText;
     }
   };
-  if (state == 'yes') {
-    xhttp.open("POST", "/PHP/add-existing.php", true);
-  } else {
-    xhttp.open("POST", "/PHP/add-new.php", true);
-  }
+  xhttp.open("POST", "/PHP/add.php", true);
   xhttp.send();
 }
+
