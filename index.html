@@ -39,8 +39,7 @@
     </div>
     <br>
     
-    <h3>Welcome to River Valley Central Offices IT Inventory Management</h3>
-    <h3>Please scan a bar code to continue</h3>
+    <h3>Please scan bar code to continue</h3>
 
     <!-- Div to show the scanner -->
     <div id="scanner-container"></div>
@@ -59,8 +58,8 @@
                     type: "LiveStream",
                     target: document.querySelector('#scanner-container'),
                     constraints: {
-                        width: 480,
-                        height: 320,
+                        width: 350,
+                        height: 200,
                         facingMode: "environment"
                     },
                 },
