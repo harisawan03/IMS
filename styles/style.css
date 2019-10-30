@@ -158,7 +158,7 @@ input {
 /* In order to place the tracking for scanner correctly */
 canvas.drawing, canvas.drawingBuffer {
   position: absolute;
-  left: 0;
+  left: center;
   top: 0;
 }
 
