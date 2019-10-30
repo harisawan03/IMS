@@ -8,14 +8,7 @@
 
   <meta charset="UTF-8">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-  <style>
-      /* In order to place the tracking correctly */
-      canvas.drawing, canvas.drawingBuffer {
-          position: absolute;
-          left: 0;
-          top: 0;
-      }
-  </style>
+  
 </head>
 
 <body>
@@ -39,7 +32,7 @@
     </div>
     <br>
     <h2>Welcome!</h2>
-    <h3>Please scan bar code to continue</h3>
+    <h3>Please scan bar code to begin</h3>
 
     <!-- Div to show the scanner -->
     <div id="scanner-container"></div>
@@ -58,8 +51,8 @@
                     type: "LiveStream",
                     target: document.querySelector('#scanner-container'),
                     constraints: {
-                        width: 350,
-                        height: 200,
+                        width: 400,
+                        height: 225,
                         facingMode: "environment"
                     },
                 },
