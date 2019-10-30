@@ -5,6 +5,17 @@
   <title>IMS Home</title>
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link href="styles/style.css" type="text/css" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      /* In order to place the tracking correctly */
+      canvas.drawing, canvas.drawingBuffer {
+          position: absolute;
+          left: 0;
+          top: 0;
+      }
+  </style>
 </head>
 
 <body>
@@ -27,17 +38,105 @@
       <h2>IT Inventory Management</h2>
     </div>
     <br>
-    <div class="buttons">
+    
+    <h3>Welcome to River Valley Central Offices IT Inventory Management</h3>
+    <h3>Please scan a bar code to continue</h3>
 
-      <!-- Include quagga minified version from a local file -->
-      <script src="script/quagga.min.js"></script>
+    <!-- Div to show the scanner -->
+    <div id="scanner-container"></div>
+    <input type="button" id="btn" value="Start/Stop the scanner" />
 
-      <h3><a href="scanner.html">Check-out Item</a></h3> <!-- eventually will route to scan page -->
-      <h3><a href="check-in.html">Check-in Item</a></h3> <!-- eventually will route to scan page -->
-      <h3><a href="add-inventory.html">Add to Inventory</a></h3>
-      <h3><a href="remove-inventory.html">Remove from Inventory</a></h3> <!-- eventually will route to scan page -->
-      <!-- <h3><a href="view.html">View Inventory</a></h3> --> <!-- future implementation -->
-    </div>
+    <!-- Include the image-diff library -->
+    <script src="script/quagga.min.js"></script>
+
+    <script>
+        var _scannerIsRunning = false;
+
+        function startScanner() {
+            Quagga.init({
+                inputStream: {
+                    name: "Live",
+                    type: "LiveStream",
+                    target: document.querySelector('#scanner-container'),
+                    constraints: {
+                        width: 480,
+                        height: 320,
+                        facingMode: "environment"
+                    },
+                },
+                decoder: {
+                    readers: [
+                        "upc_reader"
+                    ],
+                    debug: {
+                        showCanvas: true,
+                        showPatches: true,
+                        showFoundPatches: true,
+                        showSkeleton: true,
+                        showLabels: true,
+                        showPatchLabels: true,
+                        showRemainingPatchLabels: true,
+                        boxFromPatches: {
+                            showTransformed: true,
+                            showTransformedBox: true,
+                            showBB: true
+                        }
+                    }
+                },
+
+            }, function (err) {
+                if (err) {
+                    console.log(err);
+                    return
+                }
+
+                console.log("Initialization finished. Ready to start");
+                Quagga.start();
+
+                // Set flag to is running
+                _scannerIsRunning = true;
+            });
+
+            Quagga.onProcessed(function (result) {
+                var drawingCtx = Quagga.canvas.ctx.overlay,
+                drawingCanvas = Quagga.canvas.dom.overlay;
+
+                if (result) {
+                    if (result.boxes) {
+                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                        result.boxes.filter(function (box) {
+                            return box !== result.box;
+                        }).forEach(function (box) {
+                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 2 });
+                        });
+                    }
+
+                    if (result.box) {
+                        Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 2 });
+                    }
+
+                    if (result.codeResult && result.codeResult.code) {
+                        Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 3 });
+                    }
+                }
+            });
+
+
+            Quagga.onDetected(function (result) {
+                console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
+            });
+        }
+
+
+        // Start/stop scanner
+        document.getElementById("btn").addEventListener("click", function () {
+            if (_scannerIsRunning) {
+                Quagga.stop();
+            } else {
+                startScanner();
+            }
+        }, false);
+    </script>
 
   </div>
 
