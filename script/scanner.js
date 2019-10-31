@@ -75,7 +75,5 @@ function startScanner() {
         var upc = result.codeResult.code;
         console.log(upc);
         window.location.href = "https://rvc-inventory/action.html?upc=" + upc;
-        Quagga.stop();
-        return false;
     });
 }
