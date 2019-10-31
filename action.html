@@ -33,11 +33,13 @@
       <!-- Include quagga minified version from a local file -->
       <script src="script/quagga.min.js"></script>
 
-      <h3><a href="check-out.html" onLoad="this.href=this.href+$_GET['upc'];">Check-out Item</a></h3>
-      <h3><a href="check-in.html">Check-in Item</a></h3>
-      <h3><a href="add-inventory.html">Add to Inventory</a></h3>
-      <h3><a href="remove-inventory.html">Remove from Inventory</a></h3>
-      <!-- <h3><a href="view.html">View Inventory</a></h3> --> <!-- future implementation -->
+      <form methon="get">
+        <h3><input type="submit" onClick="check-out.html + $_GET['upc'];" value="Check-out Item"></h3>
+        <h3><a href="check-in.html">Check-in Item</a></h3>
+        <h3><a href="add-inventory.html">Add to Inventory</a></h3>
+        <h3><a href="remove-inventory.html">Remove from Inventory</a></h3>
+        <!-- <h3><a href="view.html">View Inventory</a></h3> --> <!-- future implementation -->
+      </form>  
     </div>
 
   </div>
