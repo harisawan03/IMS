@@ -72,9 +72,10 @@ function startScanner() {
 
     Quagga.onDetected(function (result) {
         console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
-        
         var upc = result.codeResult.code;
-        window.location.replace("https://rvc-inventory/action.html?upc=" + upc);
+        console.log(upc);
+        window.location.href = "https://rvc-inventory/action.html?upc=" + upc;
         Quagga.stop();
+        return false;
     });
 }
