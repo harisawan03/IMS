@@ -4,6 +4,7 @@ $file = 'db-connect.php';
 include $file;
 
 $upc = $_COOKIE["upc"];
+echo $upc;
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc = {$upc}";
 $sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
