@@ -20,7 +20,7 @@ function createCookie(name, value, days) {
 // for landing pages
 function showInventory() {
   // Creating a cookie after the document is ready 
-  document.ready(function () { 
+  $(document).ready(function () { 
     createCookie("upc", upc, "10"); 
   }); 
   let xhttp = new XMLHttpRequest();
