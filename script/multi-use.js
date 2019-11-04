@@ -21,7 +21,7 @@ function createCookie(name, value, days) {
 function showInventory() {
   // Creating a cookie after the document is ready 
   $(document).ready(function () { 
-    createCookie("upc", upc, "10"); 
+    createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
