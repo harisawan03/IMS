@@ -7,19 +7,10 @@ $upc = $_COOKIE["upc"];
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc = ?";
 $params = $upc;
-
-// $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
-// $inventory = sqlsrv_fetch_array($sqldata);
-
-$sqldata = sqlsrv_prepare($conn, $sqlget, $params);
-if(!$sqldata) {
-    echo "1";
-}
-
+$sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
-if(sqlsrv_execute($sqldata) === false) {
-    echo "2";
-}
+
+
 
 echo "<p>test2</p>";
 echo "<p>";
