@@ -3,7 +3,7 @@
 $file = 'db-connect.php';
 include $file;
 
-$upc = $_COOKIE["upc"];
+// $upc = $_COOKIE["upc"];
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE id = 1";
 // $params = 123456789012;
