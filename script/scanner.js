@@ -74,5 +74,9 @@ function startScanner() {
         console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
         var upc = result.codeResult.code;
         window.location.href = "https://rvc-inventory/action.html?upc=" + upc;
+        sessionStorage.setItem('upc', upc);
+
+         
+
     });
 }
