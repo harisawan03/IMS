@@ -13,12 +13,12 @@ $params = $upc;
 
 $sqldata = sqlsrv_prepare($conn, $sqlget, $params);
 if(!$sqldata) {
-    die(print_r(sqlsrv_errors(), true));
+    echo "1";
 }
 
 $inventory = sqlsrv_fetch_array($sqldata);
 if(sqlsrv_execute($sqldata) === false) {
-    die( print_r( sqlsrv_errors(), true));
+    echo "2";
 }
 
 echo "<p>test2</p>";
