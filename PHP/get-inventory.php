@@ -6,7 +6,7 @@ include $file;
 $upc = $_COOKIE["upc"];
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc = ?";
-$params = array($upc);
+$params = 123456789012;
 $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
 
