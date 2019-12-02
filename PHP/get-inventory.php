@@ -10,7 +10,8 @@ $sqlget = "SELECT item, owned, available FROM it_inventory WHERE id = 1";
 $sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
 
-echo "start" . $inventory . "end";
+echo "<p>test</p>";
+echo "<p>start" . $inventory . " end</p>";
 echo "<p>";
 echo $inventory['item'];
 echo "</p>";
