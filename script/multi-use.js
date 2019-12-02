@@ -21,3 +21,7 @@ function showUpdate() {
   xhttp.open("GET", "/PHP/confirm-inventory.php", true);
   xhttp.send();
 }
+
+// function getUPC() {
+  
+// }
