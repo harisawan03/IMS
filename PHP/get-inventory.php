@@ -8,9 +8,9 @@ echo $upc . ' var ';
 echo $_COOKIE["upc"] . ' cookie ';
 
 
-$sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
-$params = '123456789012';
-$sqldata = sqlsrv_query($conn, $sqlget, $params);
+$sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE '123456789012'";
+// $params = '123456789012';
+$sqldata = sqlsrv_query($conn, $sqlget);
 if ($sqldata === false) {
     die( print_r( sqlsrv_errors(), true));
 }
