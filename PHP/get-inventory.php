@@ -6,10 +6,10 @@ include $file;
 // $upc = $_COOKIE["upc"];
 
 echo $_GET['upc'];
-$sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
-$params = ($_GET['upc']);
-$sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
-$inventory = sqlsrv_fetch_array($sqldata);
+// $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
+// $params = ($_GET['upc']);
+// $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
+// $inventory = sqlsrv_fetch_array($sqldata);
 
 echo "<p>";
 echo $inventory['item'];
