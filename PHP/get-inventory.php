@@ -9,7 +9,7 @@ echo $_COOKIE["upc"] . ' cookie ';
 
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
-$params = array('123456789012');
+$params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params);
 if ($sqldata === false) {
     die( print_r( sqlsrv_errors(), true));
