@@ -4,8 +4,8 @@ $file = 'db-connect.php';
 include $file;
 
 $upc = $_COOKIE["upc"];
-echo $upc;
-echo $_COOKIE;
+echo $upc . ' var ';
+echo $_COOKIE . ' cookie ';
 
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
