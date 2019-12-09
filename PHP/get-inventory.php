@@ -5,7 +5,7 @@ include $file;
 
 $upc = $_COOKIE["upc"];
 echo $upc . ' var ';
-echo $_COOKIE . ' cookie ';
+echo $_COOKIE["upc"] . ' cookie ';
 
 
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
