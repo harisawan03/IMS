@@ -14,7 +14,7 @@ if ($_POST['exists'] == 'Yes') {
 } else {
   $sqlid = "SELECT MAX(id) AS currentMax FROM it_inventory";
   $sqlas = sqlsrv_query($conn, $sqlid);
-  $sqladd = "INSERT INTO it_inventory (id, item, category, owned, bin, available, upc) VALUES ((currentMax+1), '$item', '$category', $amountAdded, (currentMax+1), $amountAdded, (?))";
+  $sqladd = "INSERT INTO it_inventory (id, item, category, owned, bin, available, upc) VALUES (($sqlas+1), '$item', '$category', $amountAdded, ($sqlas+1), $amountAdded, (?))";
 }
 
 $params = array($upc);
