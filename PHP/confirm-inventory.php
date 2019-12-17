@@ -3,6 +3,8 @@
 $file = 'db-connect.php';
 include $file;
 
+$upc = $_COOKIE["upc"];
+
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)"; // sample query --eventually use views
 $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params);
