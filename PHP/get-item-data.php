@@ -3,8 +3,11 @@
 $file = 'db-connect.php';
 include $file;
 
-$sqlget = "SELECT item, category, available, owned FROM it_inventory WHERE id = 1";
-$sqldata = sqlsrv_query($conn, $sqlget) or die( print_r( sqlsrv_errors(), true));
+$upc = $_COOKIE["upc"];
+
+$sqlget = "SELECT item, category, available, owned FROM it_inventory WHERE upc LIKE (?)";
+$params = array($upc);
+$sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
 
 echo "Item Name:<br>";
