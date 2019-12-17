@@ -12,9 +12,9 @@ $category = $_POST['category'];
 if ($_POST['exists'] == 'Yes') {
   $sqladd = "UPDATE it_inventory SET owned = owned + $amountAdded, available = available + $amountAdded WHERE upc LIKE (?)";
 } else {
-  $sqlid = "SELECT MAX(id) AS currentID FROM it_inventory";
-  $sqlid = "SELECT MAX(bin) AS currentBin FROM it_inventory";
-  $sqladd = "INSERT INTO it_inventory (id, item, category, owned, bin, available, upc) VALUES ((currentID+1), '$item', '$category', $amountAdded, (currentBin+1), $amountAdded, (?))";
+  $sqlid = "SELECT MAX(id) AS currentMax FROM it_inventory";
+  $sqlas = sqlsrv_query($conn, $sqlid);
+  $sqladd = "INSERT INTO it_inventory (id, item, category, owned, bin, available, upc) VALUES ((currentMax+1), '$item', '$category', $amountAdded, (currentMax+1), $amountAdded, (?))";
 }
 
 $params = array($upc);
