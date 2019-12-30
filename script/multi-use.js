@@ -35,6 +35,9 @@ function showInventory() {
 
 // for confirmation pages
 function showUpdate() {
+  $(document).ready(function () { 
+    createCookie("upc", sessionStorage.getItem('upc'), "10"); 
+  });
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
