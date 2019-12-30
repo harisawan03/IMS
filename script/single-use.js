@@ -83,6 +83,9 @@ function displayData() {
 }
 
 function displayForm() {
+  $(document).ready(function () { 
+    createCookie("upc", sessionStorage.getItem('upc'), "10"); 
+  }); 
   let itemInfo = document.getElementById('info');
   let displaySetting = itemInfo.style.display;
   let buttons = document.getElementById('buttons');
