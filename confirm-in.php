@@ -4,6 +4,7 @@
   <title>IMS Confirm Check-in</title>
   <link href="styles/style.css" type="text/css" rel="stylesheet">
   <script src="script/multi-use.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body onLoad="showUpdate()">
