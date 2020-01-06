@@ -17,7 +17,7 @@ if ($_POST['exists'] == 'Yes') {
 }
 
 $params = array($upc);
-$sqldata = sqlsrv_query($conn, $sqladd, $params) or die(sqlsrv_errors());
+$sqldata = sqlsrv_query($conn, $sqladd, $params) or die( print_r( sqlsrv_errors(), true));
 
 header("Location: /../confirm-add.html");
 
