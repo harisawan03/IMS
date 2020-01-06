@@ -17,7 +17,10 @@ if ($_POST['exists'] == 'Yes') {
 }
 
 $params = array($upc);
-$sqldata = sqlsrv_query($conn, $sqladd, $params) or header("Location: /../duplicate-warning.html");
+$sqldata = sqlsrv_query($conn, $sqladd, $params);
+if ($sqldata === false) {
+  header("Location: /../duplicate-warning.html");
+}
 
 header("Location: /../confirm-add.html");
 
