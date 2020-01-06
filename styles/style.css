@@ -44,8 +44,13 @@ a:hover {
   background-color: #222;
 }
 
-.content, .warning {
+.content {
   text-align: center;
+}
+
+.warning {
+  text-align: center;
+  padding: 45px 67.5px;
 }
 
 h1 {
