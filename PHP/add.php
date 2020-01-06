@@ -20,8 +20,8 @@ $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqladd, $params);
 if ($sqldata === false) {
   header("Location: /../duplicate-warning.html");
+} else {
+  header("Location: /../confirm-add.html");
 }
-
-header("Location: /../confirm-add.html");
 
 ?>
