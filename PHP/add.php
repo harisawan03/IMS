@@ -17,7 +17,7 @@ if ($_POST['exists'] == 'Yes') {
 }
 
 $params = array($upc);
-$sqldata = sqlsrv_query($conn, $sqladd, $params) or die(sqlsrv_errors());
+// $sqldata = sqlsrv_query($conn, $sqladd, $params) or die(sqlsrv_errors());
 
 if ($sqldata === false) {
   echo "UPC already exists in database. Item not added, please select 'yes' to add to an existing item's data.";
