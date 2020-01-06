@@ -101,18 +101,13 @@ function displayForm() {
 }
 
 function add() {
-  try {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("add").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("POST", "/PHP/add.php", true);
-    xhttp.send();
-  }
-  catch(err) {
-    document.getElementById("confirm").innerHTML = "<h3>You are attempting to add a duplicate UPC. Please check UPC and try again.</h3>";
-  }
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("add").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "/PHP/add.php", true);
+  xhttp.send();
 }
 
