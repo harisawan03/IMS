@@ -44,7 +44,7 @@ a:hover {
   background-color: #222;
 }
 
-.content {
+.content, .warning {
   text-align: center;
 }
 
