@@ -48,12 +48,12 @@ a:hover {
   text-align: center;
 }
 
-p {
+.warning {
   text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 h1 {
