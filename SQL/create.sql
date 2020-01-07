@@ -5,7 +5,7 @@ CREATE TABLE it_inventory
   category VARCHAR(MAX),
   owned INTEGER,
   available INTEGER,
-  upc VARCHAR(10),
+  upc VARCHAR(12),
   bin INTEGER
 );
 
