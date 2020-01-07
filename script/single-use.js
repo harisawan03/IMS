@@ -63,9 +63,10 @@ function displayData() {   // for existing items (ie yes it exists)
   let buttonSetting = buttons.style.display;
   let itemInfo = document.getElementById('info');
   let displaySetting = itemInfo.style.display;
+  let cancel = document.getElementById('return');
 
-  if (state == 'no') {
-    document.getElementById('return') = 'block';
+  if (cancel.style.display == 'none') {
+    cancel.style.display = 'block';
   }
 
   let xhttp = new XMLHttpRequest();
