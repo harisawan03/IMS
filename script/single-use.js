@@ -54,7 +54,7 @@ function remove() {
 // for add-inventory.html
 let state;
 
-function displayData() {
+function displayData() {   // for existing items (ie yes it exists)
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
@@ -75,14 +75,14 @@ function displayData() {
   if (buttonSetting == 'none') {
     buttons.style.display = 'block';
   }
-  if (displaySetting == 'block') {
-    itemInfo.style.display = 'none';
-  }
+  // if (displaySetting == 'block') {
+  //   itemInfo.style.display = 'none';
+  // }
   state = 'yes';
   return state;
 }
 
-function displayForm() {
+function displayForm() {   // for new items (ie no it doesn't exist)
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
