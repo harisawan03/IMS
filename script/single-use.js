@@ -55,6 +55,7 @@ function remove() {
 let state;
 
 function displayData() {   // for existing items (ie yes it exists)
+  state = null;
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
@@ -75,9 +76,9 @@ function displayData() {   // for existing items (ie yes it exists)
   if (buttonSetting == 'none') {
     buttons.style.display = 'block';
   }
-  // if (displaySetting == 'block') {
-  //   itemInfo.style.display = 'none';
-  // }
+  if (displaySetting == 'block') {
+    itemInfo.style.display = 'none';
+  }
   state = 'yes';
   return state;
 }
