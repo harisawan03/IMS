@@ -55,7 +55,7 @@ function remove() {
 let state;
 
 function displayData() {   // for existing items (ie yes it exists)
-  state = null;
+  state = 'yes';
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
