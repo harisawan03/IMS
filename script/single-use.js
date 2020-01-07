@@ -55,10 +55,19 @@ function remove() {
 let state;
 
 function displayData() {   // for existing items (ie yes it exists)
-  state = 'yes';
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
   }); 
+  
+  let buttons = document.getElementById('buttons');
+  let buttonSetting = buttons.style.display;
+  let itemInfo = document.getElementById('info');
+  let displaySetting = itemInfo.style.display;
+
+  if (state == 'no') {
+    document.getElementById('return') = 'block';
+  }
+
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -67,11 +76,6 @@ function displayData() {   // for existing items (ie yes it exists)
   };
   xhttp.open("GET", "/PHP/get-item-data.php", true);
   xhttp.send();
-
-  let buttons = document.getElementById('buttons');
-  let buttonSetting = buttons.style.display;
-  let itemInfo = document.getElementById('info');
-  let displaySetting = itemInfo.style.display;
 
   if (buttonSetting == 'none') {
     buttons.style.display = 'block';
