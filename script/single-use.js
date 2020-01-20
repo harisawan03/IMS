@@ -127,5 +127,6 @@ function allFilled() {
   })
   if (!filled) {
     alert('Fill all required fields.');
+    break;
   }
 }
