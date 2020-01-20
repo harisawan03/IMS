@@ -35,8 +35,8 @@
       <div id="inventory"></div>
       <br>
       <form method="post" action="/PHP/remove.php">
-        Amount to be removed<br><input type="number" name="amount" min="1" step="1" value="1"><br><br>
-        Reason for removal<br><input type="text" name="reason"><br><br>
+        Amount to be removed<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
+        Reason for removal<br><input type="text" name="reason" required><br><br>
         <a href="index.html">Cancel</a>
         <input type="submit" onClick="remove()" value="Remove">
       </form>
