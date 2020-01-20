@@ -121,11 +121,11 @@ function add() {
       return;
     }
   }
-  if (!radio) {
-    document.getElementsByName('item').value = 'na';
-    document.getElementsByName('category').value = 'other';
-    document.getElementsByName('bin').value = 0;
-  }
+  // if (!radio) {
+  //   document.getElementsByName('item').value = 'na';
+  //   document.getElementsByName('category').value = 'other';
+  //   document.getElementsByName('bin').value = 0;
+  // }
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
