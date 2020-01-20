@@ -94,6 +94,20 @@ function displayData() {   // for existing items (ie yes it exists)
   return state;
 }
 
+function displayInfo() {
+  $(document).ready(function () { 
+    createCookie("upc", sessionStorage.getItem('upc'), "10"); 
+  }); 
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("required").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/PHP/get-info.php", true);
+  xhttp.send();
+}
+
 function displayForm() {   // for new items (ie no it doesn't exist)
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
