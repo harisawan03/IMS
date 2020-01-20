@@ -113,10 +113,12 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  let radio = document.getElementById('yes').checked
-  if (!radio && !allFilled()) {
-    alert('Fill all required fields.');
-    return;
+  let radio = document.getElementById('no').checked
+  if (radio) {
+    if (!allFilled()) {  
+      alert('Fill all required fields.');
+      return;
+    }
   }
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
