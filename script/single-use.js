@@ -113,14 +113,14 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  // let radio = document.getElementById('no').checked
-  // if (radio) {
-  //   if (!allFilled()) {  
-  //     console.log(radio);
-  //     alert('Fill all required fields.');
-  //     return;
-  //   }
-  // }
+  let radio = document.getElementById('no').checked
+  if (radio) {
+    if (!allFilled()) {  
+      console.log(radio);
+      alert('Fill all required fields.');
+      return;
+    }
+  }
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
