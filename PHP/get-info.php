@@ -14,12 +14,11 @@ echo 'UPC: ' . $upc;
 echo '<form method="post" action="/PHP/add.php">
         <div id="required">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
-        <div id="return"><a href="index.html">Cancel</a></div>
         <div id="info">
             Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required><br><br>
             Category<br>
-            <select class="select" name="category" value="'.$inventory["category"].'" required>
-            <option value=""></option>
+            <select class="select" name="category" required>
+            <option value="'.$inventory["category"].'"></option>
             <option value="cord">Cord</option>
             <option value="computer">Computer</option>
             <option value="adapter">Adapter</option>
