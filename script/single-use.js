@@ -108,25 +108,29 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  allFilled();
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("add").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "/PHP/add.php", true);
-  xhttp.send();
+  if (!allFilled()) {
+    alert('Fill all required fields.');
+  }
+  if (allFilled()) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("add").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("POST", "/PHP/add.php", true);
+    xhttp.send();
+  }
 }
 
 function allFilled() {
   let filled = true;
   document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
-    if (!filled) {return;}
+    if (!filled) {return false;}
     if (!i.value) {filled = false;}
   })
-  if (!filled) {
-    alert('Fill all required fields.');
-    break;
-  }
+  // if (!filled) {
+  //   alert('Fill all required fields.');
+  // }
+  if (filled) {return true;}
 }
