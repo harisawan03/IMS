@@ -41,15 +41,20 @@ function checkout() {
 
 // for remove-inventory.html
 function remove() {
-  allFilled();
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("remove").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "/PHP/remove.php", true);
-  xhttp.send();
+  if (!allFilled()) {
+    alert('Fill all required fields.');
+    return;
+  }
+  if (allFilled()) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("remove").innerHTML = this.responseText;
+      }
+    };
+    xhttp.open("POST", "/PHP/remove.php", true);
+    xhttp.send();
+  }
 }
 
 // for add-inventory.html
