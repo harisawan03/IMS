@@ -113,11 +113,12 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  if (!allFilled()) {
+  let radio = document.getElementById('no').checked
+  if (radio && !allFilled()) {
     alert('Fill all required fields.');
     return;
   }
-  if (allFilled()) {
+  if (!radio || allFilled()) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -132,6 +133,7 @@ function add() {
 function allFilled() {
   let filled = true;
   document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
+    // if (radio === 'yes') {item,category,bin filled = true}
     if (!filled) {return false;}
     if (!i.value) {filled = false;}
   })
