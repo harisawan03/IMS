@@ -113,8 +113,8 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  let radio = document.getElementById('no').checked
-  if (radio && !allFilled()) {
+  let radio = document.getElementById('yes').checked
+  if (!radio && !allFilled()) {
     alert('Fill all required fields.');
     return;
   }
