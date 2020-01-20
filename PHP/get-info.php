@@ -19,11 +19,11 @@ echo '<form method="post" action="/PHP/add.php">
             Category<br>
             <select class="select" name="category" required>
             <option value="'.$inventory["category"].'">$inventory["category"]</option>
-            <option value="cord">Cord</option>
-            <option value="computer">Computer</option>
-            <option value="adapter">Adapter</option>
-            <option value="peripheral">Peripheral</option>
-            <option value="other">Other</option>
+            <option value="cord">cord</option>
+            <option value="computer">computer</option>
+            <option value="adapter">adapter</option>
+            <option value="peripheral">peripheral</option>
+            <option value="other">other</option>
             </select><br><br>
             Bin<br><input type="number" name="bin" min="1" step="1" value="'.$inventory["bin"].'" required><br><br>
             <!-- Description<br><input type="text" name="description"><br><br> -->
