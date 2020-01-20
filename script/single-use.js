@@ -114,6 +114,7 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 
 function add() {
   let radio = document.getElementById('no').checked
+  console.log(radio);
   if (radio) {
     if (!allFilled()) {  
       alert('Fill all required fields.');
