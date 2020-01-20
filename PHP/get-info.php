@@ -18,7 +18,7 @@ echo '<form method="post" action="/PHP/add.php">
             Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required><br><br>
             Category<br>
             <select class="select" name="category" required>
-            <option value="'.$inventory["category"].'">$inventory["category"]</option>
+            <option value="'.$inventory["category"].'">'.$inventory["category"].'</option>
             <option value="cord">cord</option>
             <option value="computer">computer</option>
             <option value="adapter">adapter</option>
