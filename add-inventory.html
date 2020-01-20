@@ -35,23 +35,24 @@
         Does the item exist in inventory?<br> 
         <input type="radio" name="exists" value="Yes" id="yes" onClick="displayData()">Yes
         <input type="radio" name="exists" value="No" id="no" onClick="displayForm()">No<br><br>
-        Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
-        <div id="return"><a href="index.html">Cancel</a></div>
-        <div id="info" style="display:none;">
-          Item Name<br><input type='text' name='item' required><br><br>
-          Category<br>
-          <select class="select" name="category" required>
-            <option value=''></option>
-            <option value='cord'>Cord</option>
-            <option value='computer'>Computer</option>
-            <option value='adapter'>Adapter</option>
-            <option value='peripheral'>Peripheral</option>
-            <option value='other'>Other</option>
-          </select><br><br>
-          Bin<br><input type="number" name="bin" min="1" step="1" required><br><br>
-          <!-- Description<br><input type="text" name="description"><br><br> -->
+        <div id="required">
+          Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
+          <div id="return"><a href="index.html">Cancel</a></div>
+          <div id="info" style="display:none;">
+            Item Name<br><input type='text' name='item' required><br><br>
+            Category<br>
+            <select class="select" name="category" required>
+              <option value=''></option>
+              <option value='cord'>Cord</option>
+              <option value='computer'>Computer</option>
+              <option value='adapter'>Adapter</option>
+              <option value='peripheral'>Peripheral</option>
+              <option value='other'>Other</option>
+            </select><br><br>
+            Bin<br><input type="number" name="bin" min="1" step="1" required><br><br>
+            <!-- Description<br><input type="text" name="description"><br><br> -->
+          </div>
         </div>
-        
         <div id="add"></div>
         <div id="buttons" style="display:none;">
           <a href="index.html">Cancel</a>

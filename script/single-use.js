@@ -41,6 +41,7 @@ function checkout() {
 
 // for remove-inventory.html
 function remove() {
+  allFilled();
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -107,6 +108,7 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
+  allFilled();
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -117,3 +119,13 @@ function add() {
   xhttp.send();
 }
 
+function allFilled() {
+  let filled = true;
+  document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
+    if (!filled) {return;}
+    if (!i.value) {filled = false;}
+  })
+  if (!filled) {
+    alert('Fill all required fields.');
+  }
+}
