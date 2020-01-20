@@ -127,19 +127,11 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  let radio = document.getElementById('no').checked
-  if (radio) {
-    if (!allFilled()) {  
-      console.log(radio);
-      alert('Fill all required fields.');
-      return;
-    }
+  if (!allFilled()) {  
+    console.log(radio);
+    alert('Fill all required fields.');
+    return;
   }
-  // if (!radio) {
-  //   document.getElementsByName('item').value = 'na';
-  //   document.getElementsByName('category').value = 'other';
-  //   document.getElementsByName('bin').value = 0;
-  // }
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -153,12 +145,8 @@ function add() {
 function allFilled() {
   let filled = true;
   document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
-    // if (radio === 'yes') {item,category,bin filled = true}
     if (!filled) {return false;}
     if (!i.value) {filled = false;}
   })
-  // if (!filled) {
-  //   alert('Fill all required fields.');
-  // }
   if (filled) {return true;}
 }
