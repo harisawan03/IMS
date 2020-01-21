@@ -5,18 +5,21 @@ include $file;
 
 $upc = $_COOKIE["upc"];
 
+$sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
+$params = array($upc);
+$sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
+$inventory = sqlsrv_fetch_array($sqldata);
+
 $amountAdded = $_POST['amount'];
 $item = $_POST['item'];
 $category = $_POST['category'];
 $bin = $_POST['bin'];
 
 // need to figure out how to determine if need to update or insert based on new way of filling out form from UPC
-if ($item === " ") {
+if ($inventory['item'] === "") {
   $sqladd = "INSERT INTO it_inventory (item, category, owned, bin, available, upc) VALUES ('$item', '$category', $amountAdded, '$bin', $amountAdded, (?))";
-  echo $item . "new";
 } else {
   $sqladd = "UPDATE it_inventory SET owned = owned + $amountAdded, available = available + $amountAdded WHERE upc LIKE (?)";
-  echo $item . "existing";
 }
 
 $params = array($upc);
