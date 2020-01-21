@@ -169,6 +169,6 @@ canvas.drawing, canvas.drawingBuffer {
   top: 0;
 }
 
-/* #info {
-  display: none;
-} */
+:read-only {
+  background-color: #777;
+}
