@@ -127,8 +127,7 @@ function displayForm() {   // for new items (ie no it doesn't exist)
 }
 
 function add() {
-  if (!allFilled()) {  
-    console.log(radio);
+  if (!allFilled()) {
     alert('Fill all required fields.');
     return;
   }

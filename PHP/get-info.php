@@ -11,7 +11,36 @@ $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(
 $inventory = sqlsrv_fetch_array($sqldata);
 
 echo 'UPC: ' . $upc;
-echo '<form method="post" action="/PHP/add.php">
+
+if ($inventory["item"] == "") {
+    echo '<form method="post" action="/PHP/add.php">
+        <div id="required">
+        Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
+        <div id="info">
+            Item Name<br><input type="text" name="item" required><br><br>
+            Category<br>
+            <select class="select" name="category" required>
+            <option value=""></option>
+            <option value="cord">cord</option>
+            <option value="computer">computer</option>
+            <option value="adapter">adapter</option>
+            <option value="peripheral">peripheral</option>
+            <option value="other">other</option>
+            </select><br><br>
+            Bin<br><input type="number" name="bin" min="1" step="1" required><br><br>
+            <!-- Description<br><input type="text" name="description"><br><br> -->
+        </div>
+        </div>
+        <div id="add"></div>
+        <div id="buttons">
+        <a href="index.html">Cancel</a>
+        
+        <input type="submit" onClick="add()" value="Add">
+        </div>
+
+        </form>'
+} else {
+    echo '<form method="post" action="/PHP/add.php">
         <div id="required">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
         <div id="info">
@@ -37,5 +66,5 @@ echo '<form method="post" action="/PHP/add.php">
         </div>
 
         </form>'
-
+}
 ?>
