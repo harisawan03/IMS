@@ -44,9 +44,9 @@ if ($inventory["item"] == "") {
         <div id="required">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
         <div id="readonly">
-            Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required readonly><br><br>
+            Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required readonly style="background-color: #777;"><br><br>
             Category<br>
-            <select class="select" name="category" required readonly>
+            <select class="select" name="category" required readonly style="background-color: #777;">
             <option value="'.$inventory["category"].'">'.$inventory["category"].'</option>
             <option value="cord" disabled>cord</option>
             <option value="computer" disabled>computer</option>
@@ -54,7 +54,7 @@ if ($inventory["item"] == "") {
             <option value="peripheral" disabled>peripheral</option>
             <option value="other" disabled>other</option>
             </select><br><br>
-            Bin<br><input type="number" name="bin" min="1" step="1" value="'.$inventory["bin"].'" required readonly><br><br>
+            Bin<br><input type="number" name="bin" min="1" step="1" value="'.$inventory["bin"].'" required readonly style="background-color: #777;"><br><br>
             <!-- Description<br><input type="text" name="description"><br><br> -->
         </div>
         </div>
