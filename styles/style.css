@@ -169,6 +169,6 @@ canvas.drawing, canvas.drawingBuffer {
   top: 0;
 }
 
-input:read-only {
+#readonly {
   background-color: #777;
 }

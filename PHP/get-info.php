@@ -41,7 +41,7 @@ if ($inventory["item"] == "") {
         </form>';
 } else {
     echo '<form method="post" action="/PHP/add.php">
-        <div id="required">
+        <div id="readonly">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
         <div id="info">
             Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required readonly><br><br>
