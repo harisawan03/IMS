@@ -38,7 +38,7 @@ if ($inventory["item"] == "") {
         <input type="submit" onClick="add()" value="Add">
         </div>
 
-        </form>'
+        </form>';
 } else {
     echo '<form method="post" action="/PHP/add.php">
         <div id="required">
@@ -65,6 +65,6 @@ if ($inventory["item"] == "") {
         <input type="submit" onClick="add()" value="Add">
         </div>
 
-        </form>'
+        </form>';
 }
 ?>
