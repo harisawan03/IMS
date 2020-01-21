@@ -42,17 +42,17 @@ if ($inventory["item"] == "") {
 } else {
     echo '<form method="post" action="/PHP/add.php">
         <div id="required">
-        Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required readonly><br><br>
+        Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
         <div id="info">
             Item Name<br><input type="text" name="item" value="'.$inventory["item"].'" required readonly><br><br>
             Category<br>
             <select class="select" name="category" required readonly>
             <option value="'.$inventory["category"].'">'.$inventory["category"].'</option>
-            <option value="cord">cord</option>
-            <option value="computer">computer</option>
-            <option value="adapter">adapter</option>
-            <option value="peripheral">peripheral</option>
-            <option value="other">other</option>
+            <option value="cord" disabled>cord</option>
+            <option value="computer" disabled>computer</option>
+            <option value="adapter" disabled>adapter</option>
+            <option value="peripheral" disabled>peripheral</option>
+            <option value="other" disabled>other</option>
             </select><br><br>
             Bin<br><input type="number" name="bin" min="1" step="1" value="'.$inventory["bin"].'" required readonly><br><br>
             <!-- Description<br><input type="text" name="description"><br><br> -->
