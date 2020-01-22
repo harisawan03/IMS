@@ -105,7 +105,7 @@ function displayInfo() {
     }
   };
   xhttp.open("GET", "/PHP/get-info.php", true);
-  setTimeout(xhttp.send,2000);
+  xhttp.send();
 }
 
 function displayForm() {   // for new items (ie no it doesn't exist)
