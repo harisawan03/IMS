@@ -168,7 +168,3 @@ canvas.drawing, canvas.drawingBuffer {
   left: 0;
   top: 0;
 }
-
-#readonly {
-  background-color: #ccc;
-}
