@@ -4,12 +4,12 @@ $file = 'db-connect.php';
 include $file;
 
 $upc = $_COOKIE["upc"];
-sleep(5);
 
 $sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
 $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
+sleep(5);
 
 echo 'UPC: ' . $upc;
 
