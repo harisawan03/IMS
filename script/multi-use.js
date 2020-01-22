@@ -1,5 +1,3 @@
-
-
 // Function to create the cookie 
 function createCookie(name, value, days) { 
   var expires; 
@@ -48,6 +46,6 @@ function showUpdate() {
   xhttp.send();
 }
 
-// function getUPC() {
-  
-// }
+funciton deleteCookie() {
+  document.cookie = escape(name) + "=" + "; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
