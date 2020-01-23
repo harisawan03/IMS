@@ -95,9 +95,9 @@ function displayData() {   // for existing items (ie yes it exists)
 }
 
 function displayInfo() {
-  $(document).ready(function () { 
-    createCookie("upc", sessionStorage.getItem('upc'), "10"); 
-  }); 
+  // $(document).ready(function () { 
+  //   createCookie("upc", sessionStorage.getItem('upc'), "10"); 
+  // }); 
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
