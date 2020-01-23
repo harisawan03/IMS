@@ -1,9 +1,10 @@
 <?php
 
+$upc = $_COOKIE["upc"];
+
 function dbpull() {
     $file = 'db-connect.php';
     include $file;
-    $upc = $_COOKIE["upc"];
 
     $sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
     $params = array($upc);
