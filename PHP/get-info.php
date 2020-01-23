@@ -2,18 +2,14 @@
 
 $upc = $_COOKIE["upc"];
 
-function dbpull() {
-    $file = 'db-connect.php';
-    include $file;
+$file = 'db-connect.php';
+include $file;
 
-    $sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
-    $params = array($upc);
-    $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
-    $inventory = sqlsrv_fetch_array($sqldata);
-    return $inventory;
-}
-
-dbpull();
+$sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
+$params = array($upc);
+$sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
+$inventory = sqlsrv_fetch_array($sqldata);
+return $inventory;
 
 echo 'UPC: ' . $upc;
 
