@@ -35,10 +35,10 @@
       <!-- Include quagga minified version from a local file -->
       <script src="script/quagga.min.js"></script>
 
-      <h3><a href="check-out.html">Check-out Item</a></h3>
-      <h3><a href="check-in.html">Check-in Item</a></h3>
+      <h3><a href="check-out.html" onClick="createCookie('upc', sessionStorage.getItem('upc'), '10');">Check-out Item</a></h3>
+      <h3><a href="check-in.html" onClick="createCookie('upc', sessionStorage.getItem('upc'), '10');">Check-in Item</a></h3>
       <h3><a href="add-inventory.html" onClick="createCookie('upc', sessionStorage.getItem('upc'), '10');">Add to Inventory</a></h3>
-      <h3><a href="remove-inventory.html">Remove from Inventory</a></h3>
+      <h3><a href="remove-inventory.html" onClick="createCookie('upc', sessionStorage.getItem('upc'), '10');">Remove from Inventory</a></h3>
       <!-- <h3><a href="view.html">View Inventory</a></h3> --> <!-- future implementation -->
     </div>
 
