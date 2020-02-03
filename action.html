@@ -7,14 +7,17 @@
   <link href="styles/style.css" type="text/css" rel="stylesheet">
   <script src="script/multi-use.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $(".header").load("header.html");
+    });
+    </script>
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 </head>
 
 <body onLoad="deleteCookie()">
   
-  <div class="header">
-    <link rel="import" href="header.html">
-  </div>
+  <div class="header"></div>
 
   <div class="content">
     
