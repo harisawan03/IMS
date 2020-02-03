@@ -27,7 +27,7 @@ if ($inventory) {
 } else {
     echo "Item not found.";
     echo "<br><br><br><a href='index.html'>Cancel</a>";
-    echo "<script>window.stop();</script>";
+    echo "<style>form {display: none;}</style>";
     
 }
 
