@@ -26,7 +26,7 @@ if ($inventory) {
     echo "</p>";
 } else {
     echo "<script>alert('Item not found. You will be returned to the scanner.');</script>";
-    header("Location: /../index.html")
+    header("Location: /../index.html");
 }
 
 ?>
