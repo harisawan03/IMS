@@ -14,14 +14,19 @@ if ($sqldata === false) {
 
 $inventory = sqlsrv_fetch_array($sqldata);
 
-echo "<p>";
-echo $inventory['item'];
-echo "</p>";
-echo "<p>Total Owned: ";
-echo $inventory['owned'];
-echo "</p>";
-echo "<p>Total Available: ";
-echo $inventory['available'];
-echo "</p>";
+if ($inventory) {
+    echo "<p>";
+    echo $inventory['item'];
+    echo "</p>";
+    echo "<p>Total Owned: ";
+    echo $inventory['owned'];
+    echo "</p>";
+    echo "<p>Total Available: ";
+    echo $inventory['available'];
+    echo "</p>";
+} else {
+    echo "<script>alert('Item not found. You will be returned to the scanner.');</script>";
+    header("Location: /../index.html")
+}
 
 ?>
