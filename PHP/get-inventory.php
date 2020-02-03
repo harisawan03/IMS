@@ -24,17 +24,9 @@ if ($inventory) {
     echo "<p>Total Available: ";
     echo $inventory['available'];
     echo "</p>";
-    echo "<br>      
-        <br>
-        <form method='post' action='confirm-out.php'>
-        Who's checking it out?<br><br>
-        <input type='text' name='name'><br><br><br>
-        <a href='index.html'>Cancel</a>
-        <input type='submit' onClick='checkout()' value='Confirm'>
-        </form>";
 } else {
     echo "Item not found.";
-    echo "<a href='index.html'>Cancel</a>";
+    echo "<br><br><br><a href='index.html'>Cancel</a>";
     
 }
 
