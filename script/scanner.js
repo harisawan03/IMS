@@ -7,10 +7,16 @@ function startScanner() {
             type: "LiveStream",
             target: document.querySelector('#scanner-container'),
             constraints: {
-                width: 350,
-                height: 200,
+                width: 640,
+                height: 480,
                 facingMode: "environment"
             },
+            area: {
+                top: "0%",
+                right: "0%",
+                left: "0%",
+                bottom: "0%"
+            }
         },
         decoder: {
             readers: [
