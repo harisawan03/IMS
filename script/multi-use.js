@@ -17,10 +17,6 @@ function createCookie(name, value, days) {
 
 // for landing pages
 function showInventory() {
-  // Creating a cookie after the document is ready 
-  // $(document).ready(function () { 
-  //   createCookie("upc", sessionStorage.getItem('upc'), "10"); 
-  // }); 
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

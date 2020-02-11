@@ -6,6 +6,7 @@ include $file;
 $upc = $_COOKIE["upc"];
 
 $amountRemoved = $_POST['amount'];
+$reason = $_POST['reason'];
 
 $sqlremove = "UPDATE it_inventory SET owned = owned - $amountRemoved, available = available - $amountRemoved WHERE upc LIKE (?)"; // figure out how removal will work if item is associated with an employee
 $params = array($upc);
