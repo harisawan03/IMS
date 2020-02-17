@@ -22,7 +22,7 @@ if ($sqldata === false) {
 // $sqlitemid = "(SELECT id FROM it_inventory WHERE upc LIKE (?))";
 // $sqliid = sqlsrv_query($conn, $sqlitemid, $params);
 
-$sqlout = "INSERT INTO checked_out VALUES ('$date', (SELECT id FROM employees WHERE name = (?))), (SELECT id FROM it_inventory WHERE upc LIKE (?)))";
+$sqlout = "INSERT INTO checked_out VALUES ('$date', (SELECT id FROM employees WHERE name = (?)), (SELECT id FROM it_inventory WHERE upc LIKE (?)))";
 $params2 = array($person, $upc2);
 $sqlcheckout = sqlsrv_query($conn, $sqlout, $params2);
 if ($sqlcheckout === false) {
