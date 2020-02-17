@@ -123,17 +123,6 @@ function displayForm() {   // for new items (ie no it doesn't exist)
   return state;
 }
 
-function displayNameForm() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("person").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "/PHP/get-category.php", true);
-  xhttp.send();
-}
-
 function add() {
   if (!allFilled()) {
     alert('Ensure all fields are filled.');

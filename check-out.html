@@ -14,7 +14,7 @@
   </script>
 </head>
 
-<body onLoad="displayNameForm()">
+<body>
 
   <div class="header"></div>
 
@@ -31,7 +31,10 @@
       <br>      
       <br>
       <form method="post" action="confirm-out.php">
-        <div id="person">Person</div>
+        Who's checking it out?<br><br>
+        <input type="text" name="name"><br><br><br>
+        <a href="index.html">Cancel</a>
+        <input type="submit" onClick="checkout()" value="Confirm">
       </form>
     </div>
 
