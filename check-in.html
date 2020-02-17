@@ -26,8 +26,7 @@
 
     <div class="update">
       <br>
-      <h3>Check-in</h3>
-      <div id="checkin"></div>
+      <div id="checkin">Check-in</div>
       <div id="inventory"></div>
       <br>
       <br>
@@ -35,7 +34,7 @@
         Who's checking it in?<br><br>
         <input type="text" name="name"><br><br>
         <a href="index.html">Cancel</a>
-        <input type="submit" onClick="checkin()" value="Confirm">
+        <input type="submit" onClick="createCookie('name', form.name.value, '10'); checkin();" value="Confirm">
       </form>
     </div>
 
