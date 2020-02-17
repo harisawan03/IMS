@@ -21,7 +21,7 @@ $sqleid = sqlsrv_query($conn, $sqlemployeeid);
 $sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE (?))";
 $sqliid = sqlsrv_query($conn, $sqlitemid, $params);
 
-$sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqlemployeeid', '$sqlitemid')";
+$sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqleid', '$sqliid')";
 $sqlcheckout = sqlsrv_query($conn, $sqlout);
 if ($sqlcheckout === false) {
     die( print_r( sqlsrv_errors(), true));
