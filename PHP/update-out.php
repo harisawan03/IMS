@@ -12,7 +12,7 @@ $params = array($upc);
 
 $sqlemployeeid = "SELECT id FROM employees WHERE name = 'Haris'";
 $sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE '123456789012'";
-$sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqlemployeeid', '$sqlitemid')";
+$sqlout = "INSERT INTO checked_out VALUES ('$sqlemployeeid', '$sqlitemid')";
 
 
 $sqldata = sqlsrv_query($conn, $sqlupdate, $params);
