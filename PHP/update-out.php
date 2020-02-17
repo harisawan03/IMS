@@ -15,7 +15,7 @@ if ($sqldata === false) {
     die( print_r( sqlsrv_errors(), true));
 }
 
-$sqlemployeeid = "SELECT id FROM employees WHERE name = $person";
+$sqlemployeeid = "SELECT id FROM employees WHERE name = '$person'";
 $sqleid = sqlsrv_query($conn, $sqlemployeeid);
 
 $sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE (?))";
