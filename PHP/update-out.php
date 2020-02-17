@@ -8,9 +8,9 @@ $upc = $_COOKIE["upc"];
 $person = $_POST["name"];
 
 $sqlupdate = "UPDATE it_inventory SET available = available - 1 WHERE upc LIKE (?)";
-$params = array($upc);
+$params1 = array($upc);
 
-$sqldata = sqlsrv_query($conn, $sqlupdate, $params);
+$sqldata = sqlsrv_query($conn, $sqlupdate, $params1);
 if ($sqldata === false) {
     die( print_r( sqlsrv_errors(), true));
 }
@@ -21,7 +21,8 @@ if ($sqldata === false) {
 // $sqlitemid = "(SELECT id FROM it_inventory WHERE upc LIKE (?))";
 // $sqliid = sqlsrv_query($conn, $sqlitemid, $params);
 
-$sqlout = "INSERT INTO checked_out VALUES ('$date', (SELECT id FROM employees WHERE name = '$person'), (SELECT id FROM it_inventory WHERE upc LIKE (?)))";
+$sqlout = "INSERT INTO checked_out VALUES ('$date', (SELECT id FROM employees WHERE name = (?))), (SELECT id FROM it_inventory WHERE upc LIKE (?)))";
+$params2 = array($person, $upc);
 $sqlcheckout = sqlsrv_query($conn, $sqlout, $params);
 if ($sqlcheckout === false) {
     die( print_r( sqlsrv_errors(), true));
