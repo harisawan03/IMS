@@ -25,10 +25,11 @@ if ($inventory) {
     echo $inventory['available'];
     echo "</p>";
 } else {
-    echo "Item not found.";
-    echo "<br><br><br><a href='index.html'>Cancel</a>";
+    echo "Item not in inventory.";
+    echo "<br><br><br><a href='add-inventory.html'>Add to Inventory</a><br>";
+    echo "<a href='index.html'>Cancel</a>";
     echo "<style>form {display: none;}</style>";
-    
+    echo "<style>.buttons {display: none;}</style>";
 }
 
 ?>
