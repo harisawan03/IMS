@@ -20,7 +20,7 @@ if ($inventory["item"] == "") {
             Item Name<br><input type="text" name="item" required><br><br>
             Category<br>
             <select class="select" name="category" required style="background-color: #fff;>
-            <option value=" "> </option>
+            <option value=""></option>
             <option value="cord">cord</option>
             <option value="computer">computer</option>
             <option value="adapter">adapter</option>
