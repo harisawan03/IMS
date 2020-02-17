@@ -11,7 +11,7 @@ $sqlupdate = "UPDATE it_inventory SET available = available - 1 WHERE upc LIKE (
 $params = array($upc);
 
 $sqlemployeeid = "SELECT id FROM employees WHERE name = $person";
-$sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE '$upc'";
+$sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE '123456789012'";
 $sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqlemployeeid', '$sqlitemid')";
 
 
