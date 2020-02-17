@@ -16,12 +16,12 @@ if ($sqldata === false) {
 }
 
 $sqlemployeeid = "SELECT id FROM employees WHERE name = '$person'";
-$sqleid = sqlsrv_query($conn, $sqlemployeeid);
+// $sqleid = sqlsrv_query($conn, $sqlemployeeid);
 
 $sqlitemid = "SELECT id FROM it_inventory WHERE upc LIKE (?))";
-$sqliid = sqlsrv_query($conn, $sqlitemid, $params);
+// $sqliid = sqlsrv_query($conn, $sqlitemid, $params);
 
-$sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqleid', '$sqliid')";
+$sqlout = "INSERT INTO checked_out VALUES ('$date', '$sqlemployeeid', '$sqlitemid')";
 $sqlcheckout = sqlsrv_query($conn, $sqlout);
 if ($sqlcheckout === false) {
     die( print_r( sqlsrv_errors(), true));
