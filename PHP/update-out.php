@@ -6,7 +6,7 @@ $date = date("Y-m-d H:i:s");
 
 $upc1 = $_COOKIE["upc"];
 $upc2 = $_COOKIE["upc"];
-$person = $_POST["name"];
+$person = $_COOKIE["name"];
 
 $sqlupdate = "UPDATE it_inventory SET available = available - 1 WHERE upc LIKE (?)";
 $params1 = array($upc1);
@@ -23,7 +23,7 @@ if ($sqldata === false) {
 // $sqliid = sqlsrv_query($conn, $sqlitemid, $params);
 
 $sqlout = "INSERT INTO checked_out VALUES ('$date', (SELECT id FROM employees WHERE name = (?)), (SELECT id FROM it_inventory WHERE upc LIKE (?)))";
-$params2 = array("Haris", $upc2);
+$params2 = array($person, $upc2);
 $sqlcheckout = sqlsrv_query($conn, $sqlout, $params2);
 if ($sqlcheckout === false) {
     die( print_r( sqlsrv_errors(), true));
