@@ -2,7 +2,7 @@
 $file = 'db-connect.php';
 include $file;
 
-$date = getdate();
+$date = date("Y-m-d H:i:s");
 
 $upc = $_COOKIE["upc"];
 $person = $_POST["name"];
