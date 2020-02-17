@@ -2,6 +2,8 @@
 $file = 'db-connect.php';
 include $file;
 
+$date = getdate();
+
 $upc = $_COOKIE["upc"];
 $person = $_POST["name"];
 
