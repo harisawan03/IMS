@@ -42,6 +42,7 @@ function showUpdate() {
   xhttp.send();
 }
 
-function deleteCookie() {
+function deleteCookies() {
   document.cookie = "upc=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 }
