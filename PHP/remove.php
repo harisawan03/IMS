@@ -15,7 +15,7 @@ $sqlremove = "UPDATE it_inventory SET owned = owned - $amountRemoved, available 
 $params1 = array($upc1);
 $sqldata = sqlsrv_query($conn, $sqlremove, $params1) or die(sqlsrv_errors());
 echo "test2";
-$sqlrlog = "INSERT INTO add_remove_log VALUES ('removed', '$date', (SELECT id FROM it_inventory WHERE upc LIKE (?)), $amountRemoved, $reason)";
+$sqlrlog = "INSERT INTO add_remove_log VALUES ('removed', '$date', (SELECT id FROM it_inventory WHERE upc LIKE (?)), $amountRemoved, '$reason')";
 $params2 = array($upc2);
 $sqllog = sqlsrv_query($conn, $sqlrlog, $params2);
 if ($sqllog === false) {
