@@ -2,7 +2,7 @@
 $file = 'db-connect.php';
 include $file;
 
-$date = date("Y-m-d H:i:s");
+$date = date("Y-m-d H:i");
 
 $upc1 = $_COOKIE["upc"];
 $upc2 = $_COOKIE["upc"];
