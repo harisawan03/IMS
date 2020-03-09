@@ -51,6 +51,7 @@ function startScanner() {
         _scannerIsRunning = true;
     });
 
+    // Commented out to eliminate bar code detect feed back, but not delted in case desired in future
     // Quagga.onProcessed(function (result) {
     //     var drawingCtx = Quagga.canvas.ctx.overlay,
     //     drawingCanvas = Quagga.canvas.dom.overlay;
