@@ -174,3 +174,15 @@ canvas.drawing, canvas.drawingBuffer {
   text-align: left;
   margin: 0% 5%;
 }
+
+.docs a {
+  font-size: 35px;
+  text-align: left;
+  margin: 0% 5%;
+  padding: 0;
+  border: none;
+}
+
+.docs ul li {
+  margin-left: 5%;
+}
