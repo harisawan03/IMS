@@ -24,9 +24,10 @@
 
     <div class="success">
       <br>
-      <h3>Success!</h3>
-      <p>Check-out has been completed</p>
-      <p><?php echo $_POST['name']?></p>
+      <h2>Success!</h2>
+      <p>Check-out has been completed.</p>
+      <br>
+      <p>Employee:<?php echo $_POST['name']?></p>
       <div id="confirm"><h3>Confirm Out</h3></div>
       <a href="index.html">Return to Home</a>
     </div>
