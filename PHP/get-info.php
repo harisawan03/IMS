@@ -11,7 +11,7 @@ $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(
 $inventory = sqlsrv_fetch_array($sqldata);
 
 echo 'UPC: ' . $upc;
-echo '<br>';
+echo '<br><br>';
 
 if ($inventory["item"] == "") {
     echo '<form method="post" action="/PHP/add.php">
