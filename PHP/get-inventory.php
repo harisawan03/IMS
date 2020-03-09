@@ -28,7 +28,7 @@ if ($inventory) {
     echo "<p>";
     echo "Item not in inventory.";
     echo "</p>";
-    echo "<br><br><br><h3><a href='add-inventory.html'>Add to Inventory</a></h3>";
+    echo "<br><h3><a href='add-inventory.html'>Add to Inventory</a></h3>";
     echo "<h3><a href='index.html'>Cancel</a></h3>";
     echo "<style>form {display: none;}</style>";
     echo "<style>.buttons {display: none;}</style>";
