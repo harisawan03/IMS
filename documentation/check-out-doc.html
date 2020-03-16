@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IMS Documentation</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+  <link href="../styles/style.css" type="text/css" rel="stylesheet">
+  <script src="../script/multi-use.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $(".header").load("header.html");
+    });
+    </script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+</head>
+
+<body>
+  
+  <div class="header"></div>
+
+  <div class="content">
+    
+    <div class="ims">
+      <h2>IT Inventory Management</h2>
+    </div>
+    <br>
+    <h3>Checking Items Out</h3>
+    <br>
+    <div class="docs">
+        Choosing Check-out Item from the Action page brings you to a simple promting to input the 
+        name of the employee receiving the item. It is important that the name is entered exactly as 
+        it appears in the database, otherwise there may errors in item tracking. We will go over why 
+        this is later.
+        <br><br>
+        <img src="pictures/checkout.png" alt="check-out page">
+        <br><br>
+        Hitting Confirm will update the inventory within the database and bring you to a confirmation 
+        page. Here you will be ensured the checkout was successful and the data affected will be 
+        displayed. From here, you will be able to return to the home page.
+        <br><br>
+        <div class="warning">
+            <p>
+                BE SURE NOT TO GO BACK TO CHECK-OUT PAGE. 
+                <br>
+                Doing so may cause discrepencies in database.
+            </p>
+        </div>
+        <br><br>
+        <img src="pictures/confirm-checkout.png" alt="check-out confirmation">
+        <br><br>
+        <a href="basic.html">Previous</a>
+        <a href="check-in-doc.html">Next</a>
+        <a href="index.html">Return to Documentation Home</a>
+    </div>
+  </div>
+  
+</body>
+
+</html>
