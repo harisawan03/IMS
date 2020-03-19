@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IMS Documentation</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+  <link href="../styles/style.css" type="text/css" rel="stylesheet">
+  <script src="../script/multi-use.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $(".header").load("header.html");
+    });
+    </script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+</head>
+
+<body>
+  
+  <div class="header"></div>
+
+  <div class="content">
+    
+    <div class="ims">
+      <h2>IT Inventory Management</h2>
+    </div>
+    <br>
+    <h3>Adding Items to Inventory</h3>
+    <br>
+    <div class="docs">
+        <p>
+          As noted before, when adding an item you may come across one of two 
+          possibilties, the item already exisits in the database or is does not. 
+          The system will automatically detect if it exists or not based on the UPC
+          and redirect you accordingly.
+          <br><br>
+          If the UPC is not recognized, your only option (as seen on the basic usage 
+          intro page) will be to add the item.
+        </p>
+        <br><br>
+        <blockquote>
+          <p>
+            If the item does already exist in the inventory and the UPC was not 
+            recognized, the scanner may have not properly read the bar code. In this
+            case, return to the homepage and try again. If the problem persists and
+            you have verified the item does already exist in the inventory, see
+            <a href="custom-sql.html">the custom SQL documentation</a>. <strong>
+            But be sure you understand SQL before proceeding!</strong>
+          </p>
+        </blockquote>
+        <br><br>
+        <p>
+          
+        </p>
+        <br><br>
+        <div class="nav">
+          <a href="check-in-doc.html">Previous</a>
+          <a href="remove-doc.html">Next</a>
+          <br><br><br>
+          <a href="index.html">Return to Documentation Home</a>
+          <br><br>
+        </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

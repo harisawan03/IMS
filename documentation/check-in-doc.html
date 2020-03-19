@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IMS Documentation</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+  <link href="../styles/style.css" type="text/css" rel="stylesheet">
+  <script src="../script/multi-use.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $(".header").load("header.html");
+    });
+    </script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+</head>
+
+<body>
+  
+  <div class="header"></div>
+
+  <div class="content">
+    
+    <div class="ims">
+      <h2>IT Inventory Management</h2>
+    </div>
+    <br>
+    <h3>Checking Items In</h3>
+    <br>
+    <div class="docs">
+        <p>
+          The process for checking an item in is nearly identical to checking an 
+          item out. Upon selecting Check-in Item, you will be directed to a page 
+          to input the name of the employee checking in the item. Again, be sure to 
+          type their name exactly as it appears in the database.
+        </p>
+        <br><br>
+        <img src="pictures/checkin.png" alt="check-in page">
+        <br><br>
+        <p>
+          Hitting Confirm will update the inventory within the database and bring 
+          you to a confirmation page. Here you will be ensured the checkin was 
+          successful and the data affected will be displayed. From here, you will 
+          be able to return to the home page.
+        </p>
+        <br><br>
+        <blockquote>
+          <p>
+            <strong>Be sure not to go back to check-in page.</strong> Doing so 
+            may cause discrepencies in database.
+          </p>
+        </blockquote>
+        <br><br>
+        <img src="pictures/confirm-checkin.png" alt="check-in confirmation">
+        <br><br>
+        <div class="nav">
+          <a href="check-out-doc.html">Previous</a>
+          <a href="add-doc.html">Next</a>
+          <br><br><br>
+          <a href="index.html">Return to Documentation Home</a>
+          <br><br>
+        </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

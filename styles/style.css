@@ -171,9 +171,6 @@ canvas.drawing, canvas.drawingBuffer {
 .docs a {
   font-size: 25px;
   text-align: left;
-  margin: 0% 5%;
-  padding: 0;
-  border: none;
   border: 2px solid;
   border-color: #222;
   border-radius: 12px;
@@ -186,9 +183,10 @@ canvas.drawing, canvas.drawingBuffer {
 }
 
 .docs p {
-  font-size: 35px;
+  font-size: 25px;
   text-align: left;
-  margin: 0% 5%;
+  width: auto;
+  margin: 0;
   padding: 0;
   border: none;
 }
@@ -208,4 +206,22 @@ blockquote {
   border-left-style: solid;
   padding: 20px 45px 20px 15px;
   font-size: 20px;
+}
+.docs blockquote a {
+  font-size: 25px;
+  text-align: left;
+  margin: 0%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ccc;
+  text-decoration: underline;
+  width: auto;
+  font-weight: 400;
+}
+
+.index a {
+  border: none;
+  margin: 8px;
+  padding: 2px;
 }
