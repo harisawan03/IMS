@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IMS Documentation</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+  <link href="../styles/style.css" type="text/css" rel="stylesheet">
+  <script src="../script/multi-use.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script> 
+    $(function(){
+      $(".header").load("header.html");
+    });
+    </script>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+</head>
+
+<body>
+  
+  <div class="header"></div>
+
+  <div class="content">
+    
+    <div class="ims">
+      <h2>IT Inventory Management</h2>
+    </div>
+    <br>
+    <h3>Removing Items from Inventory</h3>
+    <br>
+    <div class="docs">
+        <p>
+          The final option for altering the inventory is to remove an item. When 
+          doing so, you will are two pieces of information that are needed. The 
+          amount to remove, pre-populated with "1", and the Reason for Removal. 
+          This is required and used for tracking purposes discussed later on.
+        </p>
+        <br><br>
+        <img src="pictures/remove.png" alt="removing an item">
+        <br><br>
+        <p>
+          Hitting Remove will, as expected, redirect you to a confirmation page 
+          after updating the database. You will see new quantities for owned and 
+          available.
+        </p>
+        <br><br>
+        <blockquote>
+          <p>
+            <strong>Be sure not to go back to the remove page.</strong> Doing so 
+            may cause discrepencies in database.
+          </p>
+        </blockquote>
+        <br><br>
+        <img src="pictures/confirm-remove.png" alt="remove inventory confirmation page">
+        <br><br>
+        <div class="nav">
+          <a href="add-doc.html">Previous</a>
+          <a href="advanced.html">Next</a>
+          <br><br><br>
+          <a href="index.html">Return to Documentation Home</a>
+          <br><br>
+        </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>
