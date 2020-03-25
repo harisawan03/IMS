@@ -73,7 +73,7 @@
       <p>
         Next are tables that track when an item is checked in or out and when an 
         item is added or removed from the inventory. The item tracker is for the 
-        purpose of who is checking items in or out, when, and how many. The 
+        purpose of seeing who is checking items in or out, when, and how many. The 
         add/remove log tracks items being added to and removed from the inventory, 
         when they are added/removed, the amount, and the reason. 
         <br><br>
@@ -92,7 +92,15 @@
       <img src="pictures/add_remove_log_simplified.PNG" alt="">
       <br><br>
       <p>
-        
+        These queries are a bit more complex, but the tables they produce make 
+        viewing changes to the inventory much more easily read. In fact, they are 
+        structured so that they can be read in a more natural way. For example, 
+        "Haris checked out a 13 inch MacBook Pro on 2020-03-16." or "One 13 inch 
+        MacBook Pro was removed on 2020-03-16 because it was broken." 
+        <br><br>
+        The queries here use Inner Joins in order to select matching values 
+        between two tables. This, in turn, makes it possible to display an item 
+        or employee name in a table, as opposed to the more vague IDs. 
       </p>
       <br><br>
       <div class="nav">
