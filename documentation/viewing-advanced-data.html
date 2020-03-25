@@ -29,11 +29,72 @@
     <br>
     <div class="docs">
       <p>
-        Often times, you may wish to view data that is not displayed during regular usage of the 
-        Inventory Management System. To do so, a handful of SQL queries are saved on the server. 
-        These are saved at 
+        Often times, you may wish to view data that is not displayed during 
+        regular usage of the Inventory Management System. To do so, a handful of 
+        SQL queries are saved on the server. These are saved at 
+        <i>D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA</i> 
+        as <i>view_data.sql</i> 
+      </p>  
+      <br><br>
+      <img src="pictures/sql.PNG" alt="sql queries">
+      <br><br>
+      <p>  
+        We will now go into each query as well as the table it produces.
       </p>
-      <br>
+      <br><br>
+      <img src="pictures/it_inventory_query.PNG" alt="sql to view inventory">
+      <br><br>
+      <img src="pictures/it_inventory.PNG" alt="inventory table">
+      <br><br><br>
+      <img src="pictures/employees_query.PNG" alt="sql to view employees">
+      <br><br>
+      <img src="pictures/employees.PNG" alt="employee table">
+      <br><br>
+      <p>
+        Here we have two very similar and simple tables. The queries shown use an
+        asterisk to select all columns from the it_inventory and employees tables 
+        respectively. The resulting tables are shown containing some example data 
+        used during development to test functionality.
+        <br><br>
+        Viewing the it_inventory will likely be an especially common practice in 
+        order to view the current state of the IT inventory. Owned and available 
+        numbers are changed by normal usage and numbers shown here will be the 
+        same as numbers shown within the app.
+      </p>
+      <br><br>
+      <img src="pictures/item_tracker_query.PNG" alt="sql to view item tracker">
+      <br><br>
+      <img src="pictures/item_tracker.PNG" alt="item tracker table">
+      <br><br><br>
+      <img src="pictures/add_remove_log_query.PNG" alt="sql to view add/remove log">
+      <br><br>
+      <img src="pictures/add_remove_log.PNG" alt="add/remove log table">
+      <br><br>
+      <p>
+        Next are tables that track when an item is checked in or out and when an 
+        item is added or removed from the inventory. The item tracker is for the 
+        purpose of who is checking items in or out, when, and how many. The 
+        add/remove log tracks items being added to and removed from the inventory, 
+        when they are added/removed, the amount, and the reason. 
+        <br><br>
+        As you may have noticed, these two simple queries are only useful insofar 
+        as one knows the item's and employee's IDs. For this reason, queries were 
+        written to give a simplified view for the purpose of tracking these 
+        important pieces of data.
+      </p>
+      <br><br>
+      <img src="pictures/track_employee_items_query.PNG" alt="">
+      <br><br>
+      <img src="pictures/track_employee_items.PNG" alt="">
+      <br><br><br>
+      <img src="pictures/add_remove_log_simplified_query.PNG" alt="">
+      <br><br>
+      <img src="pictures/add_remove_log_simplified.PNG" alt="">
+      <br><br>
+      <p>
+        
+      </p>
+      <br><br>
       <div class="nav">
         <a href="advanced.html">Previous</a>
         <a href="custom-sql.html">Next</a>
