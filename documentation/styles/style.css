@@ -1,0 +1,87 @@
+/* cleaning up CSS */
+
+/* || General Styles || */
+
+body {
+  font-family: sans-serif;
+  font-size: 35px;
+  margin: 0% 5%;
+}
+
+p {
+  font-size: 25px;
+  text-align: left;
+}
+
+h1 {
+  font-weight: lighter;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+ul {
+  margin-top: 0;
+}
+
+li {
+  margin-left: 5%;
+}
+
+a {
+  color: #222;
+}
+
+a:hover {
+  color: #FFFFFF;
+  background-color: #222;
+}
+
+blockquote {
+  background-color: #ccc;
+  border-left-color: #222;
+  border-left-width: 9px;
+  border-left-style: solid;
+  padding: 20px 45px 20px 15px;
+  font-size: 20px;
+  width: auto;
+  margin: 20px 40px;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+
+/* || Navigation || */
+
+.nav {
+  text-align: left;
+  font-size: 25px;
+}
+
+.nav a {
+  text-align: center;
+  border: 2px solid;
+  border-color: #222;
+  border-radius: 12px;
+  padding: 15px 5px;
+  margin: 10px;
+  width: 500px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.index a {
+  font-size: 25px;
+  border: none;
+  margin: 8px;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.index a:hover, .nav a:hover {
+  background-color: #222;
+  border-radius: 12px;
+}

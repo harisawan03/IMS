@@ -1,3 +1,5 @@
+/* CSS for application */
+
 html {
   font-family: sans-serif;
 }
@@ -93,16 +95,6 @@ button, input[type=submit] {
   margin: 10px 10px 10px 10px;
 }
 
-/* .grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 155px;
-  justify-items: center;
-  justify-content: center;
-  align-items: start;
-  align-content: center;
-} */
-
 input[type=radio] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -161,7 +153,8 @@ canvas.drawing, canvas.drawingBuffer {
 }
 
 
-/* The following are for documentation pages */
+/* CSS for documentation pages */
+
 .docs {
   font-size: 18px;
   text-align: left;
@@ -224,8 +217,4 @@ blockquote {
   border: none;
   margin: 8px;
   padding: 2px;
-}
-
-img.shadow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
