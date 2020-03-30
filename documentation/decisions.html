@@ -25,14 +25,62 @@
       <h2>IT Inventory Management</h2>
     </div>
     <br>
-    <h3>Explanation of Decisions Made During Development</h3>
+    <h3>Explanations of Key Decisions Made During Development</h3>
     <br>
     <div class="docs">
       <p>
+        Below we will discuss why certain design decisions were made. This is so 
+        that users are aware of potentially confusing outcomes as well as to give 
+        an understanding of why particular features exist as they currently do.
+      </p>
+      <h4>Data Only Available through SQL</h4>
+      <p> 
+        There is much data viewable only through using SQL, as we have gone over. 
+        This is for the purpose of keeping the app simple and to offer a clean 
+        and easy user experience. While there is plenty of data that we want to 
+        view that is not available in the app, its inclusion within would 
+        certainly clog up the interface. The IMS app itself serves a very specific 
+        purpose. That is, to simplify and streamline movement and alteration of 
+        IT inventory items. There is some important tracking displayed 
+        during normal usage, however this is mainly for confirmation purposes that 
+        the user sees that he or she is making the correct changes to the inventory 
+        based on what is happening to an item physically. That being said, a future 
+        feature may include the ability to view advanced data through the web app.
+      </p> 
+      <h4>Inventory Counts Going Negative and Available being Greather Than Owned</h4>
+      <p>
+        It may come to your attention, from time to time, that your counts may go 
+        negative (this may occur with the number available or owned) or the total 
+        available is greater than total owned. You will notice this in-app as you 
+        are going about normal procedures. In fact, you may even proactively 
+        notice as you are trying to, for example, check out an item and the count 
+        is already at zero or when checking in an item and owned and available 
+        are already equal. Be aware that you will not even recieve a warning for 
+        what you are about to do. The primary reason is so that ordinary usage of 
+        the app is not inturrpted. Should there be some discrepency in the 
+        database, it is preffered that normal operation can go on in getting items 
+        checked in and out. Then, once there is a chance, the issue can be 
+        investigate in the logs and the physical inventory and proceed to be fixed 
+        in a timely manner. 
+        <br><br> 
+        One might think that preventing negative counts or available being greater 
+        than owned would keep discrepencies from occurring in the databse. This is 
+        true that it will keep the program from creating these issues, but it does 
+        not prevent the user from doing it. Human error is an unavoidable part of 
+        life.
+      </p>
+      <h4>UPC is Scanned Then an Action Chosen and Not the Other Way Around</h4>
+      <p>
         
-      </p>  
-      <br><br>
-      <img src=".PNG" alt="">
+      </p>
+      <h4>Items not Deleted Completely Within App</h4>
+      <p>
+        
+      </p>
+      <h4>Employees Unable to be Added Within App</h4>
+      <p>
+        
+      </p> 
       <br><br>
       <div class="nav">
         <a href="custom-sql.html">Previous</a>
