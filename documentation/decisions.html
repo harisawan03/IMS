@@ -33,7 +33,17 @@
         that users are aware of potentially confusing outcomes as well as to give 
         an understanding of why particular features exist as they currently do.
       </p>
-      <h4>Data Only Available through SQL</h4>
+      <div class="index">
+        <ul>
+          <li><a href="#anchor-one">Data Only Available Through SQL</a></li>
+          <li><a href="#anchor-two">Inventory Counts Going Negative and Available being Greather Than Owned</a></li>
+          <li><a href="#anchor-three">UPC is Scanned Then an Action Chosen and Not the Other Way Around</a></li>
+          <li><a href="#anchor-four">Items not Deleted Completely Within App</a></li>
+          <li><a href="#anchor-five">Employees Unable to be Added Within App</a></li>
+          <li><a href="#anchor-six">Auto-Detect if UPC already Exists</a></li>
+        </ul>
+      </div>
+      <h4 id="anchor-one">Data Only Available Through SQL</h4>
       <p> 
         There is much data viewable only through using SQL, as we have gone over. 
         This is for the purpose of keeping the app simple and to offer a clean 
@@ -47,9 +57,9 @@
         based on what is happening to an item physically. That being said, a future 
         feature may include the ability to view advanced data through the web app.
       </p> 
-      <h4>Inventory Counts Going Negative and Available being Greather Than Owned</h4>
+      <h4 id="anchor-two">Inventory Counts Going Negative and Available being Greather Than Owned</h4>
       <p>
-        It may come to your attention, from time to time, that your counts may go 
+        It may come to your attention, from time to time, that your counts can go 
         negative (this may occur with the number available or owned) or the total 
         available is greater than total owned. You will notice this in-app as you 
         are going about normal procedures. In fact, you may even proactively 
@@ -69,18 +79,56 @@
         not prevent the user from doing it. Human error is an unavoidable part of 
         life.
       </p>
-      <h4>UPC is Scanned Then an Action Chosen and Not the Other Way Around</h4>
+      <h4 id="anchor-three">UPC is Scanned Then an Action Chosen and Not the Other Way Around</h4>
       <p>
-        
+        In the original plan for the UI and UX of this app, the user was greeted 
+        with the action page. Upon choosing what they were doing, they would then 
+        be directed to a scanner to begin the process of whatever action was chosen. 
+        So why then is the end product the opposite? It ended up being easier to 
+        program more efficiently and it seems to be more of a natural flow. 
+        <br><br>
+        In regards to being easier and more efficient, the biggest thing was being 
+        able to have the scanner do only one thing. There was no need to program 
+        multiple paths for the scanner to have to decide to be a part of based on 
+        what action it came from. One scanner page allows for it to simply 
+        detect a barcode, save the necessary data, then have a singular page to 
+        direct the user to every time. It is then solely up to the next page to 
+        figure out what it should do. That is, there is no need for the scanner to 
+        figure out what the check-in page should do.
       </p>
-      <h4>Items not Deleted Completely Within App</h4>
+      <h4 id="anchor-four">Items not Deleted Completely Within App</h4>
       <p>
-        
+        The initial thought was for the user to be prompted with a choice whether 
+        or not to completely remove an item from the inventory when the total 
+        owned becomes zero. The decision was made against this to keep the flow of 
+        the app as smooth as possible, to prevent accidental deletion from the 
+        inventory, and to defer the decision to a time when it may make more sense 
+        to completely remove it (i.e. when there is a low chance of more ever being 
+        added).
       </p>
-      <h4>Employees Unable to be Added Within App</h4>
+      <h4 id="anchor-five">Employees Unable to be Added Within App</h4>
       <p>
-        
+        Two major reasons determine the inability to add employees from within 
+        the app (as well as deleteing emloyees). First, as this is an <i>Inventory</i> 
+        Management System, it makes sense to keep it from also doing the job of 
+        managing emplyees as well. This goes with the running pattern of keeping 
+        things simple. Second, adding (and deleting) employees will be a reletively 
+        infrequent task. So again, there is no reason to add the complexity.
       </p> 
+      <h4 id="anchor-six">Auto-Detect if UPC already Exists</h4>
+      <p>
+        This one is sort of a given. The simple explanation here has to do with 
+        making the user experience as smooth as possible as well as eliminating 
+        human error. Additionally, it saves the user having to figure out if it 
+        exists or not and it prevents the user from having to start over if trying 
+        to check out an item that turned out to not have been added to the inventory 
+        yet. You simply are only given the option to add an item to the inventory 
+        if it currently does not exist in it. This also prevents a UPC being added 
+        with association to another item. This is already prevented within the 
+        database, where UPC is required to be a unique value, but it does not hurt 
+        to add extra precautions in order to avoid unnoticable errors.
+      </p>
+    </div>
       <br><br>
       <div class="nav">
         <a href="custom-sql.html">Previous</a>
