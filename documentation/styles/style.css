@@ -99,6 +99,7 @@ blockquote p {
   background-color: #1C2630;
   color: #FFFFFF;
   padding: 2px 1px 1px 8px;
+  margin: auto;
 }
 
 .logo {
