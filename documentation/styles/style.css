@@ -1,11 +1,9 @@
-/* cleaning up CSS */
-
 /* || General Styles || */
 
 body {
   font-family: sans-serif;
   font-size: 35px;
-  margin: 0% 5%;
+  margin: 0;
 }
 
 p {
@@ -59,10 +57,17 @@ blockquote p {
 }
 
 
+/* || Content Margins || */
+
+.content {
+  margin: 0% 10%;
+}
+
+
 /* || Navigation || */
 
 .nav {
-  text-align: left;
+  text-align: center;
   font-size: 25px;
 }
 
@@ -99,7 +104,7 @@ blockquote p {
   background-color: #1C2630;
   color: #FFFFFF;
   padding: 2px 1px 1px 8px;
-  margin: -50px -50px 0px -50px;
+  margin: -8px -50px 0px -50px;
 }
 
 .logo {
