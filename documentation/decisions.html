@@ -36,11 +36,11 @@
       <div class="index">
         <ul>
           <li><a href="#anchor-one">Data Only Available Through SQL</a></li>
-          <li><a href="#anchor-two">Inventory Counts Going Negative and Available being Greather Than Owned</a></li>
+          <li><a href="#anchor-two">Inventory Counts Going Negative and Available being Greater Than Owned</a></li>
           <li><a href="#anchor-three">UPC is Scanned Then an Action Chosen and Not the Other Way Around</a></li>
           <li><a href="#anchor-four">Items not Deleted Completely Within App</a></li>
           <li><a href="#anchor-five">Employees Unable to be Added Within App</a></li>
-          <li><a href="#anchor-six">Auto-Detect if UPC already Exists</a></li>
+          <li><a href="#anchor-six">Auto-Detect if UPC Already Exists</a></li>
         </ul>
       </div>
       <h4 id="anchor-one">Data Only Available Through SQL</h4>
@@ -50,14 +50,14 @@
         and easy user experience. While there is plenty of data that we want to 
         view that is not available in the app, its inclusion within would 
         certainly clog up the interface. The IMS app itself serves a very specific 
-        purpose. That is, to simplify and streamline movement and alteration of 
+        purpose. That is, to simplify and streamline the movement and alteration of 
         IT inventory items. There is some important tracking displayed 
-        during normal usage, however this is mainly for confirmation purposes that 
+        during normal usage, however, this is mainly for confirmation purposes that 
         the user sees that he or she is making the correct changes to the inventory 
         based on what is happening to an item physically. That being said, a future 
         feature may include the ability to view advanced data through the web app.
       </p> 
-      <h4 id="anchor-two">Inventory Counts Going Negative and Available being Greather Than Owned</h4>
+      <h4 id="anchor-two">Inventory Counts Going Negative and Available being Greater Than Owned</h4>
       <p>
         It may come to your attention, from time to time, that your counts can go 
         negative (this may occur with the number available or owned) or the total 
@@ -65,16 +65,16 @@
         are going about normal procedures. In fact, you may even proactively 
         notice as you are trying to, for example, check out an item and the count 
         is already at zero or when checking in an item and owned and available 
-        are already equal. Be aware that you will not even recieve a warning for 
+        are already equal. Be aware that you will not even receive a warning for 
         what you are about to do. The primary reason is so that ordinary usage of 
-        the app is not inturrpted. Should there be some discrepency in the 
-        database, it is preffered that normal operation can go on in getting items 
+        the app is not interrupted. Should there be some discrepancy in the 
+        database, it is preferred that normal operation can go on in getting items 
         checked in and out. Then, once there is a chance, the issue can be 
-        investigate in the logs and the physical inventory and proceed to be fixed 
+        investigated in the logs and the physical inventory and proceed to be fixed 
         in a timely manner. 
         <br><br> 
         One might think that preventing negative counts or available being greater 
-        than owned would keep discrepencies from occurring in the databse. This is 
+        than owned would keep discrepancies from occurring in the database. This is 
         true that it will keep the program from creating these issues, but it does 
         not prevent the user from doing it. Human error is an unavoidable part of 
         life.
@@ -109,13 +109,13 @@
       <h4 id="anchor-five">Employees Unable to be Added Within App</h4>
       <p>
         Two major reasons determine the inability to add employees from within 
-        the app (as well as deleteing emloyees). First, as this is an <i>Inventory</i> 
+        the app (as well as deleting employees). First, as this is an <i>Inventory</i> 
         Management System, it makes sense to keep it from also doing the job of 
-        managing emplyees as well. This goes with the running pattern of keeping 
-        things simple. Second, adding (and deleting) employees will be a reletively 
+        managing employees as well. This goes with the running pattern of keeping 
+        things simple. Second, adding (and deleting) employees will be a relatively 
         infrequent task. So again, there is no reason to add the complexity.
       </p> 
-      <h4 id="anchor-six">Auto-Detect if UPC already Exists</h4>
+      <h4 id="anchor-six">Auto-Detect if UPC Already Exists</h4>
       <p>
         This one is sort of a given. The simple explanation here has to do with 
         making the user experience as smooth as possible as well as eliminating 
@@ -124,9 +124,9 @@
         to check out an item that turned out to not have been added to the inventory 
         yet. You simply are only given the option to add an item to the inventory 
         if it currently does not exist in it. This also prevents a UPC being added 
-        with association to another item. This is already prevented within the 
-        database, where UPC is required to be a unique value, but it does not hurt 
-        to add extra precautions in order to avoid unnoticable errors.
+        that is already associated with another item. This is already prevented 
+        within the database, where UPC is required to be a unique value, but it 
+        does not hurt to add extra precautions in order to avoid unseeable errors.
       </p>
     </div>
       <br><br>

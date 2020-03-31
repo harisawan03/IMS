@@ -29,7 +29,7 @@
     <br>
     <div class="docs">
       <p>
-        In addition to using the pre-written SQL, there may be time where you 
+        In addition to using the pre-written SQL, there may be times where you 
         will want to write your own queries. Here we will go into what to be 
         aware of when doing this and why you might need to.
         <br><br>
@@ -49,12 +49,12 @@
         An essential concept to be aware of when writing queries is CRUD. CRUD 
         stands for "Create Read Update Delete" and describes the different types 
         of queries one might write. It is strongly recommended that you only write 
-        your own custom SQL as "Read" queries. That is, ones utilizing the SELECT 
+        your custom SQL as "Read" queries. That is, ones utilizing the SELECT 
         keyword. This is because, as you might expect, creating, updating, and 
-        deleting will alter data in the database, while selecting only views it. 
-        Deleting may be especially dangerous as you will permanantly get rid of 
-        data and possibly wipe data that is dependant on it as well. In general, 
-        let the core funtionality of the IMS app take care of non-reading queries 
+        deleting will alter data in the database, while selecting only views data. 
+        Deleting may be especially dangerous as you will permanently get rid of 
+        data and possibly wipe data that is dependent on it as well. In general, 
+        let the core functionality of the IMS app take care of non-reading queries 
         unless you are confident in what you are doing and are absolutely sure 
         you want the specified data to be altered.
         <br><br>
@@ -62,14 +62,14 @@
         already been written, and more may come if the need arises. That being 
         said, there may be instances where very specific data may need to be 
         viewed or times where you may need to view certain data only once. 
-        We will not go into any such queries in depth as it is expected that 
+        We will not go into any such queries in-depth as it is expected that 
         anybody wishing to write these knows how. However, by simply analyzing 
         the tables and queries that do exist, one can figure out most of what they 
         may desire to know.
         <br><br>
         We will go over two non-reading queries that we do expect to have to write 
-        from time to time. When an item needs to be delted from the inventory 
-        entirely and when an new employee needs to be added to the database. This 
+        from time to time. When an item needs to be deleted from the inventory 
+        entirely and when a new employee needs to be added to the database. This 
         functionality was not built into the main application for reasons discussed 
         later on. 
         <br><br>
@@ -82,7 +82,7 @@
           <p>
             <strong>Note</strong> that you may wish to completely remove an item 
             even if the Total Owned count is not at zero. In this case, use the 
-            app's built in Remove funtionality before deleting so that the removals 
+            app's built-in Remove functionality before deleting so that the removals 
             will still be logged. For example, if there are 4 of the item left, 
             change "Amount to be removed" to 4 and write "Outdated" in the 
             "Reason for removal" field.
