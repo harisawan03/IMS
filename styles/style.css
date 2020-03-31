@@ -153,7 +153,7 @@ canvas.drawing, canvas.drawingBuffer {
 }
 
 
-/* CSS for documentation pages */
+/* CSS for documentation pages
 
 .docs {
   font-size: 18px;
@@ -217,4 +217,4 @@ blockquote {
   border: none;
   margin: 8px;
   padding: 2px;
-}
+} */
