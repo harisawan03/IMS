@@ -15,6 +15,7 @@ $params1 = array($upc1);
 $sqldata = sqlsrv_query($conn, $sqlget, $params1) or die( print_r( sqlsrv_errors(), true));
 $inventory = sqlsrv_fetch_array($sqldata);
 
+// POST data from add inventory form
 $amountAdded = $_POST['amount'];
 $item = $_POST['item'];
 $category = $_POST['category'];

@@ -8,6 +8,7 @@ $date = date("Y-m-d H:i");
 $upc1 = $_COOKIE["upc"];
 $upc2 = $_COOKIE["upc"];
 
+// POST data from remove inventory form
 $amountRemoved = $_POST['amount'];
 $reason = $_POST['reason'];
 
