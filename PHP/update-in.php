@@ -1,4 +1,5 @@
 <?php
+
 $file = 'db-connect.php';
 include $file;
 
@@ -24,4 +25,5 @@ $sqlcheckin = sqlsrv_query($conn, $sqlin, $params2);
 if ($sqlcheckin === false) {
     die( print_r( sqlsrv_errors(), true));
 }
+
 ?>
