@@ -5,6 +5,7 @@ include $file;
 
 $upc = $_COOKIE["upc"];
 
+// get data from server
 $sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
 $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params);
@@ -14,7 +15,8 @@ if ($sqldata === false) {
 
 $inventory = sqlsrv_fetch_array($sqldata);
 
-if ($inventory) {
+// determine if item is in inventory and displays to action.html
+if ($inventory) { // if item exists, display current quantities
     echo "<p>";
     echo $inventory['item'];
     echo "</p><br>";
@@ -24,7 +26,7 @@ if ($inventory) {
     echo "<p>Total Available: ";
     echo $inventory['available'];
     echo "</p>";
-} else {
+} else { // if item does not exist, inform user and prevent displaying of all actions except for adding to inventory
     echo "<p>";
     echo "Item not in inventory.";
     echo "</p>";

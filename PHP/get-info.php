@@ -5,6 +5,7 @@ $upc = $_COOKIE["upc"];
 $file = 'db-connect.php';
 include $file;
 
+// get data from server
 $sqlget = "SELECT item, category, available, owned, bin FROM it_inventory WHERE upc LIKE (?)";
 $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params) or die( print_r( sqlsrv_errors(), true));
@@ -13,7 +14,8 @@ $inventory = sqlsrv_fetch_array($sqldata);
 echo 'UPC: ' . $upc;
 echo '<br><br>';
 
-if ($inventory["item"] == "") {
+// determine if item is in database to display proper form
+if ($inventory["item"] == "") { // if item not found, display empty fields
     echo '<form method="post" action="/PHP/add.php">
         <div id="required">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>
@@ -40,7 +42,7 @@ if ($inventory["item"] == "") {
         </div>
 
         </form>';
-} else {
+} else { // if item found, auto-populate and grey out fields that are readonly
     echo '<form method="post" action="/PHP/add.php">
         <div id="required">
         Amount being added<br><input type="number" name="amount" min="1" step="1" value="1" required><br><br>

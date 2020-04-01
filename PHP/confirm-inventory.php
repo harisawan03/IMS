@@ -5,7 +5,8 @@ include $file;
 
 $upc = $_COOKIE["upc"];
 
-$sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)"; // sample query --eventually use views
+// get current data from server
+$sqlget = "SELECT item, owned, available FROM it_inventory WHERE upc LIKE (?)";
 $params = array($upc);
 $sqldata = sqlsrv_query($conn, $sqlget, $params);
 if ($sqldata === false) {
@@ -14,6 +15,7 @@ if ($sqldata === false) {
 
 $inventory = sqlsrv_fetch_array($sqldata);
 
+// displays fetched data, this is used on confirmation pages ie confirm-xxxx.html
 echo "<br><p>Item: ";
 echo $inventory['item']; 
 echo "</p><br>";

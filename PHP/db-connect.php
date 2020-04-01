@@ -1,5 +1,7 @@
 <?php
 
+// used for all php scripts to make connection to database
+
 $serverName = "RVC-INVENTORY";
 
 $connectionInfo = array( "Database"=>"RVC-INVENTORY");
