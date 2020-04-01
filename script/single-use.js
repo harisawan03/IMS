@@ -15,6 +15,18 @@ function createCookie(name, value, days) {
       escape(value) + expires + "; path=/"; 
 }
 
+// for check-out.html
+function checkout() {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("checkout").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "/PHP/update-out.php", true);
+  xhttp.send();
+}
+
 // for check-in.html
 function checkin() {
   let xhttp = new XMLHttpRequest();
@@ -27,15 +39,31 @@ function checkin() {
   xhttp.send();
 }
 
-// for check-out.html
-function checkout() {
+// for add-inventory.html
+function add() {
+  if (!allFilled()) {
+    alert('Ensure all fields are filled.');
+    return;
+  }
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("checkout").innerHTML = this.responseText;
+      document.getElementById("add").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "/PHP/update-out.php", true);
+  xhttp.open("POST", "/PHP/add.php", true);
+  xhttp.send();
+}
+
+// for add-inventory.html
+function displayInfo() {
+  let xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("required").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/PHP/get-info.php", true);
   xhttp.send();
 }
 
@@ -57,7 +85,19 @@ function remove() {
   }
 }
 
-// for add-inventory.html
+// for add() and remove() for validating all fields are filled
+function allFilled() {
+  let filled = true;
+  document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
+    if (!filled) {return false;}
+    if (!i.value) {filled = false;}
+  })
+  if (filled) {return true;}
+}
+
+
+
+// the following are currently not being used
 let state;
 
 function displayData() {   // for existing items (ie yes it exists)
@@ -94,17 +134,6 @@ function displayData() {   // for existing items (ie yes it exists)
   return state;
 }
 
-function displayInfo() {
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("required").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "/PHP/get-info.php", true);
-  xhttp.send();
-}
-
 function displayForm() {   // for new items (ie no it doesn't exist)
   $(document).ready(function () { 
     createCookie("upc", sessionStorage.getItem('upc'), "10"); 
@@ -121,28 +150,4 @@ function displayForm() {   // for new items (ie no it doesn't exist)
   }
   state = 'no';
   return state;
-}
-
-function add() {
-  if (!allFilled()) {
-    alert('Ensure all fields are filled.');
-    return;
-  }
-  let xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("add").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "/PHP/add.php", true);
-  xhttp.send();
-}
-
-function allFilled() {
-  let filled = true;
-  document.getElementById("required").querySelectorAll("[required]").forEach(function(i) {
-    if (!filled) {return false;}
-    if (!i.value) {filled = false;}
-  })
-  if (filled) {return true;}
 }

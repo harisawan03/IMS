@@ -15,7 +15,7 @@ function createCookie(name, value, days) {
       escape(value) + expires + "; path=/"; 
 }
 
-// for landing pages
+// for action page
 function showInventory() {
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
