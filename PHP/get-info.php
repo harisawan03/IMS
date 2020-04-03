@@ -37,7 +37,7 @@ if ($inventory["item"] == "") { // if item not found, display empty fields
         <div id="add"></div>
         <div id="buttons">
         <a href="index.html">Cancel</a>
-        
+
         <input type="submit" onClick="add()" value="Add">
         </div>
 
@@ -64,7 +64,7 @@ if ($inventory["item"] == "") { // if item not found, display empty fields
         <div id="add"></div>
         <div id="buttons">
         <a href="index.html">Cancel</a>
-        
+
         <input type="submit" onClick="add()" value="Add">
         </div>
 

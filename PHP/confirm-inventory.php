@@ -17,7 +17,7 @@ $inventory = sqlsrv_fetch_array($sqldata);
 
 // displays fetched data, this is used on confirmation pages ie confirm-xxxx.html
 echo "<br><p>Item: ";
-echo $inventory['item']; 
+echo $inventory['item'];
 echo "</p><br>";
 echo "<p>Total Owned: ";
 echo $inventory['owned'];
