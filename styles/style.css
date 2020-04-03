@@ -112,6 +112,7 @@ input[type=radio] {
   margin-right: 15px;
   outline: none;
 }
+
 input[type=radio]:checked::before {
   position: absolute;
   font: 55px/1 'Open Sans', sans-serif;
@@ -119,9 +120,11 @@ input[type=radio]:checked::before {
   bottom: 0;
   margin: auto;
 }
+
 input[type=radio]:hover {
   background-color: #e7e7e7;
 }
+
 input[type=radio]:checked {
   background-color: #222;
 }
@@ -145,76 +148,9 @@ input {
   margin: 5px;
 }
 
-/* In order to place the tracking for scanner correctly */
+/* place the tracking for scanner correctly */
 canvas.drawing, canvas.drawingBuffer {
   position: absolute;
   left: 0;
   top: 0;
 }
-
-
-/* CSS for documentation pages
-
-.docs {
-  font-size: 18px;
-  text-align: left;
-  margin: 0% 5%;
-}
-
-.docs a {
-  font-size: 25px;
-  text-align: left;
-  border: 2px solid;
-  border-color: #222;
-  border-radius: 12px;
-  padding: 15px 5px;
-  margin: 10px;
-}
-
-.docs .nav a {
-  text-align: center;
-}
-
-.docs p {
-  font-size: 25px;
-  text-align: left;
-  width: auto;
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.docs ul li {
-  margin-left: 5%;
-}
-
-.intro {
-  font-size: 35px;
-}
-
-blockquote {
-  background-color: #ccc;
-  border-left-color: #222;
-  border-left-width: 9px;
-  border-left-style: solid;
-  padding: 20px 45px 20px 15px;
-  font-size: 20px;
-}
-.docs blockquote a {
-  font-size: 25px;
-  text-align: left;
-  margin: 0%;
-  border: none;
-  padding: 0;
-  margin: 0;
-  background-color: #ccc;
-  text-decoration: underline;
-  width: auto;
-  font-weight: 400;
-}
-
-.index a {
-  border: none;
-  margin: 8px;
-  padding: 2px;
-} */

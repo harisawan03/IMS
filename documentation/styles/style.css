@@ -1,3 +1,5 @@
+/* CSS for documentation */
+
 /* || General Styles || */
 
 body {
@@ -59,6 +61,7 @@ blockquote p {
 
 /* || Content Margins || */
 
+/* think about making margins larger */
 .content {
   margin: 0% 10%;
 }
