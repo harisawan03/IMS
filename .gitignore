@@ -1,0 +1,19 @@
+# OS generated files #
+######################
+.DS_Store
+
+# directories #
+###############
+.vscode/
+default/
+node_modules/
+
+# linting related #
+###################
+.eslintrc.js
+package.json
+package-lock.json
+
+# logs #
+########
+debug.log

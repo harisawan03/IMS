@@ -1,3 +1,7 @@
+// Quagga library - https://serratus.github.io/quaggaJS/
+// Code from https://ourcodeworld.com/articles/read/460/how-to-create-a-live-barcode-scanner-using-the-webcam-in-javascript
+// it has been altered for desired functionality and design
+
 var _scannerIsRunning = false;
 
 function startScanner() {
@@ -51,7 +55,9 @@ function startScanner() {
         _scannerIsRunning = true;
     });
 
-    // Commented out to eliminate bar code detect feed back, but not delted in case desired in future
+
+    // Commented out to eliminate bar code detect feedback, but not delted in case desired in future
+
     // Quagga.onProcessed(function (result) {
     //     var drawingCtx = Quagga.canvas.ctx.overlay,
     //     drawingCanvas = Quagga.canvas.dom.overlay;
@@ -80,10 +86,7 @@ function startScanner() {
     Quagga.onDetected(function (result) {
         console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
         var upc = result.codeResult.code;
-        window.location.href = "https://rvc-inventory/action.html?upc=" + upc;
+        window.location.href = "https://rvc-inventory/action.html?upc=" + upc; // automatically directs user to action page once upc is detected and saved
         sessionStorage.setItem('upc', upc);
-
-         
-
     });
 }

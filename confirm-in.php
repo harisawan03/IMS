@@ -14,6 +14,7 @@
 
 <body onLoad="showUpdate()">
 
+  <!-- div to show header -->
   <div class="header"></div>
 
   <div class="content">
@@ -28,7 +29,10 @@
       <p>Check-in has been completed.</p>
       <br>
       <p>Employee: <?php echo $_POST['name']?></p>
+
+      <!-- div to show inventory data -->
       <div id="confirm"><h3>Confirm In</h3></div>
+      
       <a href="index.html">Return to Home</a>
     </div>
 
