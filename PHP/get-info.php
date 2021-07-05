@@ -26,6 +26,7 @@ if ($inventory["item"] == "") { // if item not found, display empty fields
             <option selected value=""></option>
             <option value="cord">cord</option>
             <option value="computer">computer</option>
+            <option value="tablet">tablet</option>
             <option value="adapter">adapter</option>
             <option value="peripheral">peripheral</option>
             <option value="other">other</option>
@@ -53,6 +54,7 @@ if ($inventory["item"] == "") { // if item not found, display empty fields
             <option value="'.$inventory["category"].'">'.$inventory["category"].'</option>
             <option value="cord" disabled>cord</option>
             <option value="computer" disabled>computer</option>
+            <option value="tablet" disabled>tablet</option>
             <option value="adapter" disabled>adapter</option>
             <option value="peripheral" disabled>peripheral</option>
             <option value="other" disabled>other</option>
